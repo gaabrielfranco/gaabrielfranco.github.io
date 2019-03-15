@@ -12,5 +12,3 @@ category: project
 author: johndoe
 externalLink: false
 ---
-
-Disponivel em: http//google.com
