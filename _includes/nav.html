@@ -17,7 +17,7 @@
         {% if site.projects == true %}
             {% if page.title != "Publications" %}
                 <li class="item">
-                    <a class="link" href="{{ site.url }}/publications">Publications</a>
+                    <a class="link" href="{{ site.url }}/publications">Pubs</a>
                 </li>
             {% endif %}
         {% endif %}
@@ -32,7 +32,7 @@
 
         {% if site.resume == true %}
             <li class="item">
-                <a class="link" href="{% if site.resume-external %}{{ site.resume-url }}{% else %}{{ site.url }}/{{ site.resume-url }}{% endif %}">Résumé</a>
+                <a class="link" href="{% if site.resume-external %}{{ site.resume-url }}{% else %}{{ site.url }}/{{ site.resume-url }}{% endif %}">CV</a>
             </li>
         {% endif %}
     </ul>
