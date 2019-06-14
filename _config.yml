@@ -56,7 +56,7 @@ email: gabrielvsfranco@outlook.com
 authors:
     gaabrielfranco:
         name: Gabriel Franco
-        bio: MSc student in Computer Science at the Federal University of Viçosa (UFV) - Brazil 
+        bio: MSc student in Computer Science at Universidade Federal Viçosa (UFV) - Brazil 
         external-image: false
         picture: assets/images/profile.jpg
         # twitter: johndoe
@@ -74,7 +74,7 @@ width: normal
 projects: true
 
 # if you don't need "about" or "blog", comment them out below
-# about: true
+about: true
 # blog: true
 
 # do you want to show the "read time" of the posts?
