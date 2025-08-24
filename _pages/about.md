@@ -32,4 +32,3 @@ Hi! I am Gabriel, 4th year Computer Science PhD student at Boston University wor
 My main research interest is mechanistic interpretability of large language models (LLMs). Before that, I used to work in a weakly supervised learning problem called Learning from Label Proportions (LLP).
 
 Before joining BU, I worked as a Data Scientist for Localiza and SEEK AIPS in Belo Horizonte, Brazil. During my time in the industry, I mostly worked on developing and deploying machine learning models and recommender systems, using technologies such as Golang, Python/ML libraries, ElasticSearch, and Redis. Also, I was responsible for optimizing some of our models to maintain their efficiency.
-
