@@ -71,6 +71,11 @@ ninja.data = [{
           description: "",
           section: "News",handler: () => {
               window.location.href = "/news/preprint_sparse_attention/";
+            },},{id: "news-our-paper-quot-disentangling-text-and-math-in-word-problems-evidence-for-the-bidimensional-structure-of-large-language-models-reasoning-quot-has-been-accepted-at-findings-of-acl-25",
+          title: 'Our paper &amp;quot;Disentangling Text and Math in Word Problems - Evidence for the...',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/acl25_findings_paper/";
             },},{id: "projects-project-1",
           title: 'project 1',
           description: "with background image",
