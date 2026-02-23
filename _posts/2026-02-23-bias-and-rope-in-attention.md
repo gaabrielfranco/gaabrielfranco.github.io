@@ -160,18 +160,21 @@ The derivations rely on $W_Q$ and $W_K$ being well-conditioned (full column rank
 Appendix B.4 reports this holds for the studied models (condition numbers below 1000, usually much smaller), including GPT-2 small, Pythia-160M, and Gemma-2 2B. Below are the per-matrix plots converted from your PDF figures.
 
 ### GPT-2 small
+
 <div class="cond-grid">
 {% include figure.liquid loading="eager" path="assets/img/posts/qk-bias-rope/gpt2-small_W_Q_condition_numbers.png" class="img-fluid rounded z-depth-1 qk-img-white" zoomable=true caption="Condition numbers of $W_Q$ across layers and heads." %}
 {% include figure.liquid loading="eager" path="assets/img/posts/qk-bias-rope/gpt2-small_W_K_condition_numbers.png" class="img-fluid rounded z-depth-1 qk-img-white" zoomable=true caption="Condition numbers of $W_K$ across layers and heads." %}
 </div>
 
 ### Pythia-160M
+
 <div class="cond-grid">
 {% include figure.liquid loading="eager" path="assets/img/posts/qk-bias-rope/pythia-160m_W_Q_condition_numbers.png" class="img-fluid rounded z-depth-1 qk-img-white" zoomable=true caption="Condition numbers of $W_Q$ across layers and heads." %}
 {% include figure.liquid loading="eager" path="assets/img/posts/qk-bias-rope/pythia-160m_W_K_condition_numbers.png" class="img-fluid rounded z-depth-1 qk-img-white" zoomable=true caption="Condition numbers of $W_K$ across layers and heads." %}
 </div>
 
 ### Gemma-2 2B
+
 <div class="cond-grid">
 {% include figure.liquid loading="eager" path="assets/img/posts/qk-bias-rope/gemma-2-2b_W_Q_condition_numbers.png" class="img-fluid rounded z-depth-1 qk-img-white" zoomable=true caption="Condition numbers of $W_Q$ across layers and heads." %}
 {% include figure.liquid loading="eager" path="assets/img/posts/qk-bias-rope/gemma-2-2b_W_K_condition_numbers.png" class="img-fluid rounded z-depth-1 qk-img-white" zoomable=true caption="Condition numbers of $W_K$ across layers and heads." %}

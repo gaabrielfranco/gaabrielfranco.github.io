@@ -221,7 +221,6 @@ plugins:
   - jemoji
   - jekyll-scholar
 
-
 # Sitemap settings
 defaults:
   - scope:

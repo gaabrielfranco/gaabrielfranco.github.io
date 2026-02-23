@@ -1,126 +1,303 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Bias Intuition</title>
-  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
-  <style>
-    body { margin: 0; font-family: Arial, sans-serif; background: #fff; color: #111; }
-    .wrap { max-width: 1080px; margin: 0 auto; padding: 10px 14px 12px; }
-    .controls { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 10px; }
-    .control { border: 1px solid #ddd; border-radius: 8px; padding: 8px; background: #fafafa; }
-    .control label { display: block; font-size: 13px; margin-bottom: 6px; }
-    .metrics { font-size: 14px; margin: 8px 0 0; }
-    #plot { width: 100%; height: 550px; }
-    @media (max-width: 900px) { .controls { grid-template-columns: 1fr; } #plot { height: 640px; } }
-  </style>
-</head>
-<body>
-  <div class="wrap">
-    <div class="controls">
-      <div class="control">
-        <label>Condition number (both Wq and Wk): <b id="condVal">20</b></label>
-        <input id="cond" type="range" min="2" max="900" step="1" value="20" />
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bias Intuition</title>
+    <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #fff;
+        color: #111;
+      }
+      .wrap {
+        max-width: 1080px;
+        margin: 0 auto;
+        padding: 10px 14px 12px;
+      }
+      .controls {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 12px;
+        margin-bottom: 10px;
+      }
+      .control {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 8px;
+        background: #fafafa;
+      }
+      .control label {
+        display: block;
+        font-size: 13px;
+        margin-bottom: 6px;
+      }
+      .metrics {
+        font-size: 14px;
+        margin: 8px 0 0;
+      }
+      #plot {
+        width: 100%;
+        height: 550px;
+      }
+      @media (max-width: 900px) {
+        .controls {
+          grid-template-columns: 1fr;
+        }
+        #plot {
+          height: 640px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="controls">
+        <div class="control">
+          <label>Condition number (both Wq and Wk): <b id="condVal">20</b></label>
+          <input id="cond" type="range" min="2" max="900" step="1" value="20" />
+        </div>
+        <div class="control">
+          <label>Bias scale: <b id="biasVal">1.00</b></label>
+          <input id="bscale" type="range" min="0" max="3" step="0.01" value="1" />
+        </div>
+        <div class="control">
+          <label>Pseudoinverse perturbation: <b id="noiseVal">0.00</b></label>
+          <input id="noise" type="range" min="0" max="0.2" step="0.001" value="0" />
+        </div>
       </div>
-      <div class="control">
-        <label>Bias scale: <b id="biasVal">1.00</b></label>
-        <input id="bscale" type="range" min="0" max="3" step="0.01" value="1" />
-      </div>
-      <div class="control">
-        <label>Pseudoinverse perturbation: <b id="noiseVal">0.00</b></label>
-        <input id="noise" type="range" min="0" max="0.2" step="0.001" value="0" />
-      </div>
+      <div id="plot"></div>
+      <div class="metrics" id="metrics"></div>
     </div>
-    <div id="plot"></div>
-    <div class="metrics" id="metrics"></div>
-  </div>
 
-<script>
-function rot(t){ const c=Math.cos(t), s=Math.sin(t); return [[c,-s],[s,c]]; }
-function mm(A,B){ return [[A[0][0]*B[0][0]+A[0][1]*B[1][0],A[0][0]*B[0][1]+A[0][1]*B[1][1]],[A[1][0]*B[0][0]+A[1][1]*B[1][0],A[1][0]*B[0][1]+A[1][1]*B[1][1]]]; }
-function mv(A,v){ return [A[0][0]*v[0]+A[0][1]*v[1],A[1][0]*v[0]+A[1][1]*v[1]]; }
-function mtv(A,v){ return [A[0][0]*v[0]+A[1][0]*v[1],A[0][1]*v[0]+A[1][1]*v[1]]; }
-function add(a,b){ return [a[0]+b[0],a[1]+b[1]]; }
-function sub(a,b){ return [a[0]-b[0],a[1]-b[1]]; }
-function dot(a,b){ return a[0]*b[0]+a[1]*b[1]; }
-function inv2(A){ const d=A[0][0]*A[1][1]-A[0][1]*A[1][0]; return [[ A[1][1]/d, -A[0][1]/d],[-A[1][0]/d, A[0][0]/d]]; }
-function tr(A){ return [[A[0][0],A[1][0]],[A[0][1],A[1][1]]]; }
-function scale2(s1,s2){ return [[s1,0],[0,s2]]; }
-function mixNoise(A,n){ return [[A[0][0]+n*0.31, A[0][1]-n*0.17],[A[1][0]+n*0.23, A[1][1]-n*0.11]]; }
+    <script>
+      function rot(t) {
+        const c = Math.cos(t),
+          s = Math.sin(t);
+        return [
+          [c, -s],
+          [s, c],
+        ];
+      }
+      function mm(A, B) {
+        return [
+          [A[0][0] * B[0][0] + A[0][1] * B[1][0], A[0][0] * B[0][1] + A[0][1] * B[1][1]],
+          [A[1][0] * B[0][0] + A[1][1] * B[1][0], A[1][0] * B[0][1] + A[1][1] * B[1][1]],
+        ];
+      }
+      function mv(A, v) {
+        return [A[0][0] * v[0] + A[0][1] * v[1], A[1][0] * v[0] + A[1][1] * v[1]];
+      }
+      function mtv(A, v) {
+        return [A[0][0] * v[0] + A[1][0] * v[1], A[0][1] * v[0] + A[1][1] * v[1]];
+      }
+      function add(a, b) {
+        return [a[0] + b[0], a[1] + b[1]];
+      }
+      function sub(a, b) {
+        return [a[0] - b[0], a[1] - b[1]];
+      }
+      function dot(a, b) {
+        return a[0] * b[0] + a[1] * b[1];
+      }
+      function inv2(A) {
+        const d = A[0][0] * A[1][1] - A[0][1] * A[1][0];
+        return [
+          [A[1][1] / d, -A[0][1] / d],
+          [-A[1][0] / d, A[0][0] / d],
+        ];
+      }
+      function tr(A) {
+        return [
+          [A[0][0], A[1][0]],
+          [A[0][1], A[1][1]],
+        ];
+      }
+      function scale2(s1, s2) {
+        return [
+          [s1, 0],
+          [0, s2],
+        ];
+      }
+      function mixNoise(A, n) {
+        return [
+          [A[0][0] + n * 0.31, A[0][1] - n * 0.17],
+          [A[1][0] + n * 0.23, A[1][1] - n * 0.11],
+        ];
+      }
 
-const xd=[1.1, -0.4], xs=[-0.6, 1.0];
-const bqBase=[0.45, -0.3], bkBase=[-0.35, 0.55];
+      const xd = [1.1, -0.4],
+        xs = [-0.6, 1.0];
+      const bqBase = [0.45, -0.3],
+        bkBase = [-0.35, 0.55];
 
-function buildW(cond, qang, kang){
-  const D=scale2(1,1/cond);
-  const Wq=mm(rot(qang), D);
-  const Wk=mm(rot(kang), D);
-  return {Wq, Wk};
-}
+      function buildW(cond, qang, kang) {
+        const D = scale2(1, 1 / cond);
+        const Wq = mm(rot(qang), D);
+        const Wk = mm(rot(kang), D);
+        return { Wq, Wk };
+      }
 
-function draw(){
-  const cond = parseFloat(document.getElementById('cond').value);
-  const bscale = parseFloat(document.getElementById('bscale').value);
-  const noise = parseFloat(document.getElementById('noise').value);
-  document.getElementById('condVal').textContent = String(cond);
-  document.getElementById('biasVal').textContent = bscale.toFixed(2);
-  document.getElementById('noiseVal').textContent = noise.toFixed(3);
+      function draw() {
+        const cond = parseFloat(document.getElementById("cond").value);
+        const bscale = parseFloat(document.getElementById("bscale").value);
+        const noise = parseFloat(document.getElementById("noise").value);
+        document.getElementById("condVal").textContent = String(cond);
+        document.getElementById("biasVal").textContent = bscale.toFixed(2);
+        document.getElementById("noiseVal").textContent = noise.toFixed(3);
 
-  const {Wq,Wk}=buildW(cond, 0.5, -0.35);
-  const bq=[bqBase[0]*bscale,bqBase[1]*bscale];
-  const bk=[bkBase[0]*bscale,bkBase[1]*bscale];
+        const { Wq, Wk } = buildW(cond, 0.5, -0.35);
+        const bq = [bqBase[0] * bscale, bqBase[1] * bscale];
+        const bk = [bkBase[0] * bscale, bkBase[1] * bscale];
 
-  const q=mtv(Wq,xd), k=mtv(Wk,xs);
-  const orig = dot(add(q,bq), add(k,bk));
+        const q = mtv(Wq, xd),
+          k = mtv(Wk, xs);
+        const orig = dot(add(q, bq), add(k, bk));
 
-  const pinvQ = mixNoise(inv2(Wq), noise*cond/900.0);
-  const pinvK = mixNoise(inv2(Wk), noise*cond/900.0);
+        const pinvQ = mixNoise(inv2(Wq), (noise * cond) / 900.0);
+        const pinvK = mixNoise(inv2(Wk), (noise * cond) / 900.0);
 
-  const cd = mv(tr(pinvQ), bq);
-  const cs = mv(tr(pinvK), bk);
-  const xdt = add(xd,cd), xst = add(xs,cs);
+        const cd = mv(tr(pinvQ), bq);
+        const cs = mv(tr(pinvK), bk);
+        const xdt = add(xd, cd),
+          xst = add(xs, cs);
 
-  const Omega = mm(Wq, tr(Wk));
-  const reform = dot(xdt, mv(Omega, xst));
+        const Omega = mm(Wq, tr(Wk));
+        const reform = dot(xdt, mv(Omega, xst));
 
-  const q2 = mtv(Wq,xdt), k2 = mtv(Wk,xst);
+        const q2 = mtv(Wq, xdt),
+          k2 = mtv(Wk, xst);
 
-  const tr1 = {x:[0,xd[0]], y:[0,xd[1]], mode:'lines+markers+text', text:['','xd'], textposition:'top center', line:{color:'#1f77b4', width:3}, xaxis:'x', yaxis:'y', name:'xd'};
-  const tr2 = {x:[0,xdt[0]], y:[0,xdt[1]], mode:'lines+markers+text', text:['','xd+cd'], textposition:'top center', line:{color:'#2ca02c', width:3}, xaxis:'x', yaxis:'y', name:'xd+cd'};
-  const tr3 = {x:[0,xs[0]], y:[0,xs[1]], mode:'lines+markers+text', text:['','xs'], textposition:'bottom center', line:{color:'#ff7f0e', width:3}, xaxis:'x', yaxis:'y', name:'xs'};
-  const tr4 = {x:[0,xst[0]], y:[0,xst[1]], mode:'lines+markers+text', text:['','xs+cs'], textposition:'bottom center', line:{color:'#d62728', width:3}, xaxis:'x', yaxis:'y', name:'xs+cs'};
+        const tr1 = {
+          x: [0, xd[0]],
+          y: [0, xd[1]],
+          mode: "lines+markers+text",
+          text: ["", "xd"],
+          textposition: "top center",
+          line: { color: "#1f77b4", width: 3 },
+          xaxis: "x",
+          yaxis: "y",
+          name: "xd",
+        };
+        const tr2 = {
+          x: [0, xdt[0]],
+          y: [0, xdt[1]],
+          mode: "lines+markers+text",
+          text: ["", "xd+cd"],
+          textposition: "top center",
+          line: { color: "#2ca02c", width: 3 },
+          xaxis: "x",
+          yaxis: "y",
+          name: "xd+cd",
+        };
+        const tr3 = {
+          x: [0, xs[0]],
+          y: [0, xs[1]],
+          mode: "lines+markers+text",
+          text: ["", "xs"],
+          textposition: "bottom center",
+          line: { color: "#ff7f0e", width: 3 },
+          xaxis: "x",
+          yaxis: "y",
+          name: "xs",
+        };
+        const tr4 = {
+          x: [0, xst[0]],
+          y: [0, xst[1]],
+          mode: "lines+markers+text",
+          text: ["", "xs+cs"],
+          textposition: "bottom center",
+          line: { color: "#d62728", width: 3 },
+          xaxis: "x",
+          yaxis: "y",
+          name: "xs+cs",
+        };
 
-  const tr5 = {x:[0,q[0]], y:[0,q[1]], mode:'lines+markers+text', text:['','q=Wq^T xd'], textposition:'top center', line:{color:'#1f77b4', width:3}, xaxis:'x2', yaxis:'y2', name:'q'};
-  const tr6 = {x:[0,add(q,bq)[0]], y:[0,add(q,bq)[1]], mode:'lines+markers+text', text:['','q+bq'], textposition:'top center', line:{color:'#2ca02c', width:3}, xaxis:'x2', yaxis:'y2', name:'q+bq'};
-  const tr7 = {x:[0,k[0]], y:[0,k[1]], mode:'lines+markers+text', text:['','k=Wk^T xs'], textposition:'bottom center', line:{color:'#ff7f0e', width:3}, xaxis:'x2', yaxis:'y2', name:'k'};
-  const tr8 = {x:[0,add(k,bk)[0]], y:[0,add(k,bk)[1]], mode:'lines+markers+text', text:['','k+bk'], textposition:'bottom center', line:{color:'#d62728', width:3}, xaxis:'x2', yaxis:'y2', name:'k+bk'};
+        const tr5 = {
+          x: [0, q[0]],
+          y: [0, q[1]],
+          mode: "lines+markers+text",
+          text: ["", "q=Wq^T xd"],
+          textposition: "top center",
+          line: { color: "#1f77b4", width: 3 },
+          xaxis: "x2",
+          yaxis: "y2",
+          name: "q",
+        };
+        const tr6 = {
+          x: [0, add(q, bq)[0]],
+          y: [0, add(q, bq)[1]],
+          mode: "lines+markers+text",
+          text: ["", "q+bq"],
+          textposition: "top center",
+          line: { color: "#2ca02c", width: 3 },
+          xaxis: "x2",
+          yaxis: "y2",
+          name: "q+bq",
+        };
+        const tr7 = {
+          x: [0, k[0]],
+          y: [0, k[1]],
+          mode: "lines+markers+text",
+          text: ["", "k=Wk^T xs"],
+          textposition: "bottom center",
+          line: { color: "#ff7f0e", width: 3 },
+          xaxis: "x2",
+          yaxis: "y2",
+          name: "k",
+        };
+        const tr8 = {
+          x: [0, add(k, bk)[0]],
+          y: [0, add(k, bk)[1]],
+          mode: "lines+markers+text",
+          text: ["", "k+bk"],
+          textposition: "bottom center",
+          line: { color: "#d62728", width: 3 },
+          xaxis: "x2",
+          yaxis: "y2",
+          name: "k+bk",
+        };
 
-  const traces=[tr1,tr2,tr3,tr4,tr5,tr6,tr7,tr8];
-  const layout={
-    title:'Bias intuition: translate in residual space (left) vs translate in Q/K space (right)',
-    paper_bgcolor:'#fff', plot_bgcolor:'#fff',
-    margin:{l:30,r:20,t:56,b:30}, showlegend:false,
-    xaxis:{domain:[0,0.47], range:[-2,2], zeroline:true, gridcolor:'#eee', title:'Residual space'},
-    yaxis:{domain:[0,1], range:[-2,2], zeroline:true, gridcolor:'#eee', scaleanchor:'x', scaleratio:1},
-    xaxis2:{domain:[0.53,1], range:[-2,2], zeroline:true, gridcolor:'#eee', title:'Q/K space'},
-    yaxis2:{domain:[0,1], range:[-2,2], zeroline:true, gridcolor:'#eee', scaleanchor:'x2', scaleratio:1},
-    annotations:[
-      {xref:'paper',yref:'paper',x:0.23,y:1.02,text:'ACC++ path: (xd+cd), (xs+cs), fixed Omega',showarrow:false,font:{size:13}},
-      {xref:'paper',yref:'paper',x:0.77,y:1.02,text:'Original path: W^T x + b',showarrow:false,font:{size:13}}
-    ]
-  };
-  Plotly.react('plot', traces, layout, {displayModeBar:false, responsive:true});
+        const traces = [tr1, tr2, tr3, tr4, tr5, tr6, tr7, tr8];
+        const layout = {
+          title: "Bias intuition: translate in residual space (left) vs translate in Q/K space (right)",
+          paper_bgcolor: "#fff",
+          plot_bgcolor: "#fff",
+          margin: { l: 30, r: 20, t: 56, b: 30 },
+          showlegend: false,
+          xaxis: { domain: [0, 0.47], range: [-2, 2], zeroline: true, gridcolor: "#eee", title: "Residual space" },
+          yaxis: { domain: [0, 1], range: [-2, 2], zeroline: true, gridcolor: "#eee", scaleanchor: "x", scaleratio: 1 },
+          xaxis2: { domain: [0.53, 1], range: [-2, 2], zeroline: true, gridcolor: "#eee", title: "Q/K space" },
+          yaxis2: { domain: [0, 1], range: [-2, 2], zeroline: true, gridcolor: "#eee", scaleanchor: "x2", scaleratio: 1 },
+          annotations: [
+            {
+              xref: "paper",
+              yref: "paper",
+              x: 0.23,
+              y: 1.02,
+              text: "ACC++ path: (xd+cd), (xs+cs), fixed Omega",
+              showarrow: false,
+              font: { size: 13 },
+            },
+            { xref: "paper", yref: "paper", x: 0.77, y: 1.02, text: "Original path: W^T x + b", showarrow: false, font: { size: 13 } },
+          ],
+        };
+        Plotly.react("plot", traces, layout, { displayModeBar: false, responsive: true });
 
-  const err=Math.abs(orig-reform);
-  document.getElementById('metrics').innerHTML =
-    '<b>Original score</b>: '+orig.toFixed(8)+
-    ' &nbsp; | &nbsp; <b>Reformulated score</b>: '+reform.toFixed(8)+
-    ' &nbsp; | &nbsp; <b>Absolute error</b>: '+err.toExponential(3)+
-    '<br/><span style="color:#444">When condition is good and pseudoinverse is stable, the two forms match closely.</span>';
-}
-['cond','bscale','noise'].forEach(id=>document.getElementById(id).addEventListener('input',draw));
-draw();
-</script>
-</body>
+        const err = Math.abs(orig - reform);
+        document.getElementById("metrics").innerHTML =
+          "<b>Original score</b>: " +
+          orig.toFixed(8) +
+          " &nbsp; | &nbsp; <b>Reformulated score</b>: " +
+          reform.toFixed(8) +
+          " &nbsp; | &nbsp; <b>Absolute error</b>: " +
+          err.toExponential(3) +
+          '<br/><span style="color:#444">When condition is good and pseudoinverse is stable, the two forms match closely.</span>';
+      }
+      ["cond", "bscale", "noise"].forEach((id) => document.getElementById(id).addEventListener("input", draw));
+      draw();
+    </script>
+  </body>
 </html>
