@@ -67,7 +67,7 @@ This note summarizes Appendix B of the paper above and gives a geometric intuiti
 
 ## 1. QK attention as a bilinear map
 
-For one attention head, the pre-Softmax score between destination token $d$ and source token $s$ is
+For one attention head, the pre-Softmax score between destination token $d$ and source token $s$ is defined as
 
 $$
 A'_{ds} = x_d^\top \Omega x_s, \qquad \Omega = W_Q W_K^\top.
@@ -139,6 +139,22 @@ $\Omega = W_Q W_K^\top$:
 
 $$
 A'_{ds} = (x_d^\top M_d)\,\Omega\,(M_s x_s).
+$$
+
+Using the Appendix B.2 construction:
+
+$$
+M_d = W_Q R_d W_Q^{\dagger},
+\qquad
+M_s = (W_K^\top)^{\dagger} R_s^\top W_K^\top,
+$$
+
+which gives
+
+$$
+(x_d^\top M_d)\,\Omega\,(M_s x_s)
+= x_d^\top W_Q R_d R_s^\top W_K^\top x_s
+= x_d^\top W_Q R_{(d-s)} W_K^\top x_s.
 $$
 
 As a concrete toy illustration, the figure again uses a $\mathbb{R}^3\to\mathbb{R}^2$ setup.
