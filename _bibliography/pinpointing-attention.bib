@@ -1,0 +1,918 @@
+@inproceedings{NEURIPS2020_92650b2e,
+ author = {Vig, Jesse and Gehrmann, Sebastian and Belinkov, Yonatan and Qian, Sharon and Nevo, Daniel and Singer, Yaron and Shieber, Stuart},
+ booktitle = {Advances in Neural Information Processing Systems},
+ editor = {H. Larochelle and M. Ranzato and R. Hadsell and M.F. Balcan and H. Lin},
+ pages = {12388--12401},
+ publisher = {Curran Associates, Inc.},
+ title = {Investigating Gender Bias in Language Models Using Causal Mediation Analysis},
+ url = {https://proceedings.neurips.cc/paper_files/paper/2020/file/92650b2e92217715fe312e6fa7b90d82-Paper.pdf},
+ volume = {33},
+ year = {2020}
+}
+
+@misc{CausalScrubbing,
+author = {Lawrence Chan and Adrià Garriga-Alonso and Nicholas Goldowsky-Dill and Ryan Greenblatt and Jenny Nitishinskaya and Ansh Radhakrishnan and Buck Shlegeris and Nate Thomas},
+title = {Causal Scrubbing: a method for rigorously testing interpretability hypotheses},
+howpublished = {Redwood Research},
+url = {https://www.alignmentforum.org/posts/JvZhhzycHu2Yd57RN/causal-scrubbing-a-method-for-rigorously-testing}
+}
+
+@article{10.48550/arxiv.2408.01416, 
+year = {2024}, 
+title = {{The Quest for the Right Mediator: A History, Survey, and Theoretical Grounding of Causal Interpretability}}, 
+author = {Mueller, Aaron and Brinkmann, Jannik and Li, Millicent and Marks, Samuel and Pal, Koyena and Prakash, Nikhil and Rager, Can and Sankaranarayanan, Aruna and Sharma, Arnab Sen and Sun, Jiuding and Todd, Eric and Bau, David and Belinkov, Yonatan}, 
+journal = {arXiv}, 
+doi = {10.48550/arxiv.2408.01416}, 
+eprint = {2408.01416}, 
+abstract = {{Interpretability provides a toolset for understanding how and why neural networks behave in certain ways. However, there is little unity in the field: most studies employ ad-hoc evaluations and do not share theoretical foundations, making it difficult to measure progress and compare the pros and cons of different techniques. Furthermore, while mechanistic understanding is frequently discussed, the basic causal units underlying these mechanisms are often not explicitly defined. In this paper, we propose a perspective on interpretability research grounded in causal mediation analysis. Specifically, we describe the history and current state of interpretability taxonomized according to the types of causal units (mediators) employed, as well as methods used to search over mediators. We discuss the pros and cons of each mediator, providing insights as to when particular kinds of mediators and search methods are most appropriate depending on the goals of a given study. We argue that this framing yields a more cohesive narrative of the field, as well as actionable insights for future work. Specifically, we recommend a focus on discovering new mediators with better trade-offs between human-interpretability and compute-efficiency, and which can uncover more sophisticated abstractions from neural networks than the primarily linear mediators employed in current work. We also argue for more standardized evaluations that enable principled comparisons across mediator types, such that we can better understand when particular causal units are better suited to particular use cases.}}
+}%                 
+
+@book{Pearl2009,
+author = {Judea Pearl},
+year = 2009,
+title = "Causality",
+edition = "Second",
+publisher = {Cambridge University Press}
+}
+
+@misc{sharkey2025openproblemsmechanisticinterpretability,
+      title={Open Problems in Mechanistic Interpretability}, 
+      author={Lee Sharkey and Bilal Chughtai and Joshua Batson and Jack Lindsey and Jeff Wu and Lucius Bushnaq and Nicholas Goldowsky-Dill and Stefan Heimersheim and Alejandro Ortega and Joseph Bloom and Stella Biderman and Adria Garriga-Alonso and Arthur Conmy and Neel Nanda and Jessica Rumbelow and Martin Wattenberg and Nandi Schoots and Joseph Miller and Eric J. Michaud and Stephen Casper and Max Tegmark and William Saunders and David Bau and Eric Todd and Atticus Geiger and Mor Geva and Jesse Hoogland and Daniel Murfet and Tom McGrath},
+      year={2025},
+      eprint={2501.16496},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2501.16496}, 
+}
+
+@misc{NandaMI,
+    title = "A Comprehensive Mechanistic Interpretability Explainer \& Glossary",
+    author = "Neel Nanda",
+    howpublished = {\url{https://www.neelnanda.io/mechanistic-interpretability/glossary}}}
+
+@misc{OlahMI,
+    title = "Mechanistic Interpretability, Variables, and the Importance of Interpretable Bases",
+    author = "Chris Olah",
+    howpublished = {\url{https://transformer-circuits.pub/2022/mech-interp-essay/index.html}}}
+
+%%% SAEs
+
+@misc{BrickenSAEs,
+    title = "Towards Monosemanticity: Decomposing Language Models With Dictionary Learning",
+    author = "Trenton Bricken and Adly Templeton and Joshua Batson and Brian Chen and Adam Jermyn and Tom Conerly and Nicholas L Turner and Cem Anil and Carson Denison and Amanda Askell and Robert Lasenby and Yifan Wu and Shauna Kravec and Nicholas Schiefer and Tim Maxwell and Nicholas Joseph and Alex Tamkin and Karina Nguyen and Brayden McLean and Josiah E Burke and Tristan Hume and Shan Carter and Tom Henighan and Chris Olah",
+    howpublished = {\url{https://transformer-circuits.pub/2023/monosemantic-features}}}
+
+@misc{bushnaqSAEs,
+    title = "LessWrong Post",
+    author = "Lucius Bushnaq",
+    howpublished = {\url{https://www.lesswrong.com/posts/cCgxp3Bq4aS9z5xqd/lucius-bushnaq-s-shortform?commentId=wETE2ebypKzAdH8De}}}
+
+@misc{bussmanSAEs,
+    title = "Showing {SAE} Latents Are Not Atomic Using {Meta-SAEs}",
+    author = "Bart Bussmann and Michael Pearce and Patrick Leask and Joseph Bloom and Lee Sharkey and Neel Nanda",
+    howpublished = {\url{https://www.lesswrong.com/posts/TMAmHh4DdMr4nCSr5/showing-sae-latents-are-not-atomic-using-meta-saes}}}
+
+
+@misc{chugtaiActivationSpaceDoomed,
+    title = "Activation space interpretability may be doomed",
+    author = "bilalchughtai and Lucius Bushnaq",
+    howpublished = {\url{https://www.lesswrong.com/posts/gYfpPbww3wQRaxAFD/activation-space-interpretability-may-be-doomed}}}
+
+@misc{gao2024scalingevaluatingsparseautoencoders,
+      title={Scaling and evaluating sparse autoencoders}, 
+      author={Leo Gao and Tom Dupré la Tour and Henk Tillman and Gabriel Goh and Rajan Troll and Alec Radford and Ilya Sutskever and Jan Leike and Jeffrey Wu},
+      year={2024},
+      eprint={2406.04093},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2406.04093}, 
+}
+
+@misc{leask2025sparseautoencoderscanonicalunits,
+      title={Sparse Autoencoders Do Not Find Canonical Units of Analysis}, 
+      author={Patrick Leask and Bart Bussmann and Michael Pearce and Joseph Bloom and Curt Tigges and Noura Al Moubayed and Lee Sharkey and Neel Nanda},
+      year={2025},
+      eprint={2502.04878},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2502.04878}, 
+}
+
+@misc{chanin2024absorptionstudyingfeaturesplitting,
+      title={A is for Absorption: Studying Feature Splitting and Absorption in Sparse Autoencoders}, 
+      author={David Chanin and James Wilken-Smith and Tomáš Dulka and Hardik Bhatnagar and Joseph Bloom},
+      year={2024},
+      eprint={2409.14507},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2409.14507}, 
+}
+
+@inproceedings{jain-wallace-2019-attention,
+    title = "{A}ttention is not {E}xplanation",
+    author = "Jain, Sarthak  and
+      Wallace, Byron C.",
+    editor = "Burstein, Jill  and
+      Doran, Christy  and
+      Solorio, Thamar",
+    booktitle = "Proceedings of the 2019 Conference of the North {A}merican Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers)",
+    month = jun,
+    year = "2019",
+    address = "Minneapolis, Minnesota",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/N19-1357/",
+    doi = "10.18653/v1/N19-1357",
+    pages = "3543--3556",
+    abstract = "Attention mechanisms have seen wide adoption in neural NLP models. In addition to improving predictive performance, these are often touted as affording transparency: models equipped with attention provide a distribution over attended-to input units, and this is often presented (at least implicitly) as communicating the relative importance of inputs. However, it is unclear what relationship exists between attention weights and model outputs. In this work we perform extensive experiments across a variety of NLP tasks that aim to assess the degree to which attention weights provide meaningful {\textquotedblleft}explanations{\textquotedblright} for predictions. We find that they largely do not. For example, learned attention weights are frequently uncorrelated with gradient-based measures of feature importance, and one can identify very different attention distributions that nonetheless yield equivalent predictions. Our findings show that standard attention modules do not provide meaningful explanations and should not be treated as though they do."
+}
+
+@misc{anwar2024foundationalchallengesassuringalignment,
+      title={Foundational Challenges in Assuring Alignment and Safety of Large Language Models}, 
+      author={Usman Anwar and Abulhair Saparov and Javier Rando and Daniel Paleka and Miles Turpin and Peter Hase and Ekdeep Singh Lubana and Erik Jenner and Stephen Casper and Oliver Sourbut and Benjamin L. Edelman and Zhaowei Zhang and Mario Günther and Anton Korinek and Jose Hernandez-Orallo and Lewis Hammond and Eric Bigelow and Alexander Pan and Lauro Langosco and Tomasz Korbak and Heidi Zhang and Ruiqi Zhong and Seán Ó hÉigeartaigh and Gabriel Recchia and Giulio Corsi and Alan Chan and Markus Anderljung and Lilian Edwards and Aleksandar Petrov and Christian Schroeder de Witt and Sumeet Ramesh Motwan and Yoshua Bengio and Danqi Chen and Philip H. S. Torr and Samuel Albanie and Tegan Maharaj and Jakob Foerster and Florian Tramer and He He and Atoosa Kasirzadeh and Yejin Choi and David Krueger},
+      year={2024},
+      eprint={2404.09932},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2404.09932}, 
+}
+
+@inproceedings{NEURIPS2020_1457c0d6,
+author = {Brown, Tom and Mann, Benjamin and Ryder, Nick and Subbiah, Melanie and Kaplan, Jared D and Dhariwal, Prafulla and Neelakantan, Arvind and Shyam, Pranav and Sastry, Girish and Askell, Amanda and Agarwal, Sandhini and Herbert-Voss, Ariel and Krueger, Gretchen and Henighan, Tom and Child, Rewon and Ramesh, Aditya and Ziegler, Daniel and Wu, Jeffrey and Winter, Clemens and Hesse, Chris and Chen, Mark and Sigler, Eric and Litwin, Mateusz and Gray, Scott and Chess, Benjamin and Clark, Jack and Berner, Christopher and McCandlish, Sam and Radford, Alec and Sutskever, Ilya and Amodei, Dario},
+ booktitle = {Advances in Neural Information Processing Systems},
+ editor = {H. Larochelle and M. Ranzato and R. Hadsell and M.F. Balcan and H. Lin},
+ pages = {1877--1901},
+ publisher = {Curran Associates, Inc.},
+ title = {Language Models are Few-Shot Learners},
+ url = {https://proceedings.neurips.cc/paper_files/paper/2020/file/1457c0d6bfcb4967418bfb8ac142f64a-Paper.pdf},
+ volume = {33},
+ year = {2020}
+}
+
+@article{radford2019language,
+  title={Language Models are Unsupervised Multitask Learners},
+  author={Radford, Alec and Wu, Jeff and Child, Rewon and Luan, David and Amodei, Dario and Sutskever, Ilya},
+  journal = "OpenAIblog",
+  year={2019}
+}
+
+
+@inproceedings{NIPS2017_3f5ee243,
+ author = {Vaswani, Ashish and Shazeer, Noam and Parmar, Niki and Uszkoreit, Jakob and Jones, Llion and Gomez, Aidan N and Kaiser, \L ukasz and Polosukhin, Illia},
+ booktitle = {Advances in Neural Information Processing Systems},
+ editor = {I. Guyon and U. Von Luxburg and S. Bengio and H. Wallach and R. Fergus and S. Vishwanathan and R. Garnett},
+ pages = {},
+ publisher = {Curran Associates, Inc.},
+ title = {Attention is All you Need},
+ url = {https://proceedings.neurips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf},
+ volume = {30},
+ year = {2017}
+}
+
+
+
+@misc{sun2024massiveactivationslargelanguage,
+      title={Massive Activations in Large Language Models}, 
+      author={Mingjie Sun and Xinlei Chen and J. Zico Kolter and Zhuang Liu},
+      year={2024},
+      eprint={2402.17762},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2402.17762}, 
+}
+
+@misc{xiao2024efficientstreaminglanguagemodels,
+      title={Efficient Streaming Language Models with Attention Sinks}, 
+      author={Guangxuan Xiao and Yuandong Tian and Beidi Chen and Song Han and Mike Lewis},
+      year={2024},
+      eprint={2309.17453},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2309.17453}, 
+}
+
+@inproceedings{cancedda-2024-spectral,
+    title = "Spectral Filters, Dark Signals, and Attention Sinks",
+    author = "Cancedda, Nicola",
+    editor = "Ku, Lun-Wei  and
+      Martins, Andre  and
+      Srikumar, Vivek",
+    booktitle = "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    month = aug,
+    year = "2024",
+    address = "Bangkok, Thailand",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2024.acl-long.263/",
+    doi = "10.18653/v1/2024.acl-long.263",
+    pages = "4792--4808",
+    abstract = "Projecting intermediate representations onto the vocabulary is an increasingly popular interpretation tool for transformer-based LLMs, also known as the logit lens (Nostalgebraist). We propose a quantitative extension to this approach and define spectral filters on intermediate representations based on partitioning the singular vectors of the vocabulary embedding and unembedding matrices into bands. We find that the signals exchanged in the tail end of the spectrum, i.e. corresponding to the singular vectors with smallest singular values, are responsible for attention sinking (Xiao et al., 2023), of which we provide an explanation. We find that the negative log-likelihood of pretrained models can be kept low despite suppressing sizeable parts of the embedding spectrum in a layer-dependent way, as long as attention sinking is preserved. Finally, we discover that the representation of tokens that draw attention from many tokens have large projections on the tail end of the spectrum, and likely act as additional attention sinks."
+}
+
+@article{DBLP:journals/corr/abs-2104-09864,
+  author       = {Jianlin Su and
+                  Yu Lu and
+                  Shengfeng Pan and
+                  Bo Wen and
+                  Yunfeng Liu},
+  title        = {RoFormer: Enhanced Transformer with Rotary Position Embedding},
+  journal      = {CoRR},
+  volume       = {abs/2104.09864},
+  year         = {2021},
+  url          = {https://arxiv.org/abs/2104.09864},
+  eprinttype    = {arXiv},
+  eprint       = {2104.09864},
+  timestamp    = {Mon, 26 Apr 2021 17:25:10 +0200},
+  biburl       = {https://dblp.org/rec/journals/corr/abs-2104-09864.bib},
+  bibsource    = {dblp computer science bibliography, https://dblp.org}
+}
+
+@misc{ferrando2024similaritycircuitslanguagescase,
+      title={On the Similarity of Circuits across Languages: a Case Study on the Subject-verb Agreement Task}, 
+      author={Javier Ferrando and Marta R. Costa-jussà},
+      year={2024},
+      eprint={2410.06496},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2410.06496}, 
+}
+
+@inproceedings{lan2024interpretablesequencecontinuationanalyzing,
+    title = "Towards Interpretable Sequence Continuation: Analyzing Shared Circuits in Large Language Models",
+    author = "Lan, Michael  and
+      Torr, Philip  and
+      Barez, Fazl",
+    editor = "Al-Onaizan, Yaser  and
+      Bansal, Mohit  and
+      Chen, Yun-Nung",
+    booktitle = "Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing",
+    month = nov,
+    year = "2024",
+    address = "Miami, Florida, USA",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2024.emnlp-main.699/",
+    doi = "10.18653/v1/2024.emnlp-main.699",
+    pages = "12576--12601",
+    abstract = "While transformer models exhibit strong capabilities on linguistic tasks, their complex architectures make them difficult to interpret. Recent work has aimed to reverse engineer transformer models into human-readable representations called circuits that implement algorithmic functions. We extend this research by analyzing and comparing circuits for similar sequence continuation tasks, which include increasing sequences of Arabic numerals, number words, and months. By applying circuit interpretability analysis, we identify a key sub-circuit in both GPT-2 Small and Llama-2-7B responsible for detecting sequence members and for predicting the next member in a sequence. Our analysis reveals that semantically related sequences rely on shared circuit subgraphs with analogous roles. Additionally, we show that this sub-circuit has effects on various math-related prompts, such as on intervaled circuits, Spanish number word and months continuation, and natural language word problems. Overall, documenting shared computational structures enables better model behavior predictions, identification of errors, and safer editing procedures. This mechanistic understanding of transformers is a critical step towards building more robust, aligned, and interpretable language models."
+}
+
+@misc{alain2018understandingintermediatelayersusing,
+      title={Understanding intermediate layers using linear classifier probes}, 
+      author={Guillaume Alain and Yoshua Bengio},
+      year={2018},
+      eprint={1610.01644},
+      archivePrefix={arXiv},
+      primaryClass={stat.ML},
+      url={https://arxiv.org/abs/1610.01644}, 
+}
+
+@misc{merullo2024talkingheadsunderstandinginterlayer,
+      title={Talking Heads: Understanding Inter-layer Communication in Transformer Language Models}, 
+      author={Jack Merullo and Carsten Eickhoff and Ellie Pavlick},
+      year={2024},
+      eprint={2406.09519},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2406.09519}, 
+}
+
+@inproceedings{NEURIPS2024_6216515a,
+ author = {Pan, Xu and Philip, Aaron and Xie, Ziqian and Schwartz, Odelia},
+ booktitle = {Advances in Neural Information Processing Systems},
+ editor = {A. Globerson and L. Mackey and D. Belgrave and A. Fan and U. Paquet and J. Tomczak and C. Zhang},
+ pages = {54595--54631},
+ publisher = {Curran Associates, Inc.},
+ title = {Dissecting Query-Key Interaction in Vision Transformers},
+ url = {https://proceedings.neurips.cc/paper_files/paper/2024/file/6216515a5e0b3257c49dcb1647e497d1-Paper-Conference.pdf},
+ volume = {37},
+ year = {2024}
+}
+
+@misc{franco2024sparseattentiondecompositionapplied,
+      title={Sparse Attention Decomposition Applied to Circuit Tracing}, 
+      author={Gabriel Franco and Mark Crovella},
+      year={2024},
+      eprint={2410.00340},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2410.00340}, 
+}
+
+@article{Elhage21, 
+title = {{A Mathematical Framework for Transformer Circuits}}, 
+author = {Elhage, Nelson and Nanda, Neel and Olsson, Catherine and Henighan, Tom and Joseph, Nicholas and Mann, Ben and Askell, Amanda and Bai, Yuntao and Chen, Anna and Conerly, Tom and DasSarma, Nova and Drain, Dawn and Ganguli, Deep and Hatfield-Dodds, Zac and Hernandez, Danny and Jones, Andy and Kernion, Jackson and Lovitt, Liane and Ndousse, Kamal and Amodei, Dario and Brown, Tom and Clark, Jack and Kaplan, Jared and McCandlish, Sam and Olah, Chris}, 
+journal = {Transformer Circuits Thread}, 
+year = 2021,
+url = {https://transformer-circuits.pub/2021/framework/index.html}
+}%  
+
+@inproceedings{
+park2023the,
+title={The Linear Representation Hypothesis and the Geometry of Large Language Models},
+author={Kiho Park and Yo Joong Choe and Victor Veitch},
+booktitle={Causal Representation Learning Workshop at NeurIPS 2023},
+year={2023},
+url={https://openreview.net/forum?id=T0PoOJg8cK}
+}
+
+@inproceedings{conmy2023automatedcircuitdiscoverymechanistic,
+ author = {Conmy, Arthur and Mavor-Parker, Augustine and Lynch, Aengus and Heimersheim, Stefan and Garriga-Alonso, Adri\`{a}},
+ booktitle = {Advances in Neural Information Processing Systems},
+ editor = {A. Oh and T. Naumann and A. Globerson and K. Saenko and M. Hardt and S. Levine},
+ pages = {16318--16352},
+ publisher = {Curran Associates, Inc.},
+ title = {Towards Automated Circuit Discovery for Mechanistic Interpretability},
+ url = {https://proceedings.neurips.cc/paper_files/paper/2023/file/34e1dbe95d34d7ebaf99b9bcaeb5b2be-Paper-Conference.pdf},
+ volume = {36},
+ year = {2023}
+}
+
+@article{Alishahi_Chrupała_Linzen_2019, 
+title={Analyzing and interpreting neural networks for NLP: A report on the first BlackboxNLP workshop}, 
+volume={25}, 
+ISSN={1351-3249}, 
+DOI={10.1017/s135132491900024x}, 
+abstractNote={The Empirical Methods in Natural Language Processing (EMNLP) 2018 workshop BlackboxNLP was dedicated to resources and techniques specifically developed for analyzing and understanding the inner-workings and representations acquired by neural models of language. Approaches included: systematic manipulation of input to neural networks and investigating the impact on their performance, testing whether interpretable knowledge can be decoded from intermediate representations acquired by neural networks, proposing modifications to neural network architectures to make their knowledge state or generated output more explainable, and examining the performance of networks on simplified or formal languages. Here we review a number of representative studies in each category.}, number={4}, 
+journal={Natural Language Engineering}, 
+author={Alishahi, Afra and Chrupała, Grzegorz and Linzen, Tal}, 
+year={2019}, 
+pages={543–557} 
+}
+
+
+
+@article{olah2020zoom,
+  title={Zoom in: An introduction to circuits},
+  author={Olah, Chris and Cammarata, Nick and Schubert, Ludwig and Goh, Gabriel and Petrov, Michael and Carter, Shan},
+  journal={Distill},
+  volume={5},
+  number={3},
+  pages={e00024--001},
+  year={2020}
+}
+
+@article{Lieberum_Rahtz_Kramár_Nanda_Irving_Shah_Mikulik_2023, 
+title={Does Circuit Analysis Interpretability Scale? Evidence from Multiple Choice Capabilities in Chinchilla}, 
+DOI={10.48550/arxiv.2307.09458}, 
+abstractNote={\emph{Circuit analysis} is a promising technique for understanding the internal mechanisms of language models. However, existing analyses are done in small models far from the state of the art. To address this, we present a case study of circuit analysis in the 70B Chinchilla model, aiming to test the scalability of circuit analysis. In particular, we study multiple-choice question answering, and investigate Chinchilla’s capability to identify the correct answer emph{label} given knowledge of the correct answer emph{text}. We find that the existing techniques of logit attribution, attention pattern visualization, and activation patching naturally scale to Chinchilla, allowing us to identify and categorize a small set of `output nodes’ (attention heads and MLPs). We further study the `correct letter’ category of attention heads aiming to understand the semantics of their features, with mixed results. For normal multiple-choice question answers, we significantly compress the query, key and value subspaces of the head without loss of performance when operating on the answer labels for multiple-choice questions, and we show that the query and key subspaces represent an `Nth item in an enumeration’ feature to at least some extent. However, when we attempt to use this explanation to understand the heads’ behaviour on a more general distribution including randomized answer labels, we find that it is only a partial explanation, suggesting there is more to learn about the operation of `correct letter’ heads on multiple choice question answering.}, 
+journal={arXiv}, 
+author={Lieberum, Tom and Rahtz, Matthew and Kramár, János and Nanda, Neel and Irving, Geoffrey and Shah, Rohin and Mikulik, Vladimir}, 
+year={2023} }
+
+@article{Hanna_Liu_Variengien_2023, 
+title={How does GPT-2 compute greater-than?: Interpreting mathematical abilities in a pre-trained language model}, 
+DOI={10.48550/arxiv.2305.00586}, 
+abstractNote={Pre-trained language models can be surprisingly adept at tasks they were not explicitly trained on, but how they implement these capabilities is poorly understood. In this paper, we investigate the basic mathematical abilities often acquired by pre-trained language models. Concretely, we use mechanistic interpretability techniques to explain the (limited) mathematical abilities of GPT-2 small. As a case study, we examine its ability to take in sentences such as “The war lasted from the year 1732 to the year 17”, and predict valid two-digit end years (years > 32). We first identify a circuit, a small subset of GPT-2 small’s computational graph that computes this task’s output. Then, we explain the role of each circuit component, showing that GPT-2 small’s final multi-layer perceptrons boost the probability of end years greater than the start year. Finally, we find related tasks that activate our circuit. Our results suggest that GPT-2 small computes greater-than using a complex but general mechanism that activates across diverse contexts.}, 
+journal={arXiv}, 
+author={Hanna, Michael and Liu, Ollie and Variengien, Alexandre}, 
+year={2023} }
+
+@article{Gurnee_Nanda_Pauly_Harvey_Troitskii_Bertsimas_2023, 
+title={Finding Neurons in a Haystack: Case Studies with Sparse Probing}, 
+DOI={10.48550/arxiv.2305.01610}, 
+abstractNote={Despite rapid adoption and deployment of large language models (LLMs), the internal computations of these models remain opaque and poorly understood. In this work, we seek to understand how high-level human-interpretable features are represented within the internal neuron activations of LLMs. We train $k$-sparse linear classifiers (probes) on these internal activations to predict the presence of features in the input; by varying the value of $k$ we study the sparsity of learned representations and how this varies with model scale. With $k=1$, we localize individual neurons which are highly relevant for a particular feature, and perform a number of case studies to illustrate general properties of LLMs. In particular, we show that early layers make use of sparse combinations of neurons to represent many features in superposition, that middle layers have seemingly dedicated neurons to represent higher-level contextual features, and that increasing scale causes representational sparsity to increase on average, but there are multiple types of scaling dynamics. In all, we probe for over 100 unique features comprising 10 different categories in 7 different models spanning 70 million to 6.9 billion parameters.}, 
+journal={arXiv}, 
+author={Gurnee, Wes and Nanda, Neel and Pauly, Matthew and Harvey, Katherine and Troitskii, Dmitrii and Bertsimas, Dimitris}, 
+year={2023} }
+
+@inbook{10.5555/104339.104348, author = {Smolensky, P.}, title = {Neural and conceptual interpretation of PDP models}, year = {1986}, isbn = {0262631105}, publisher = {MIT Press}, address = {Cambridge, MA, USA}, booktitle = {Parallel Distributed Processing: Explorations in the Microstructure, Vol. 2: Psychological and Biological Models}, pages = {390–431}, numpages = {42} }
+
+
+ @article{Mikolov_Sutskever_Chen_Corrado_Dean_2013, title={Distributed Representations of Words and Phrases and their Compositionality}, DOI={10.48550/arxiv.1310.4546}, abstractNote={The recently introduced continuous Skip-gram model is an efficient method for learning high-quality distributed vector representations that capture a large number of precise syntactic and semantic word relationships. In this paper we present several extensions that improve both the quality of the vectors and the training speed. By subsampling of the frequent words we obtain significant speedup and also learn more regular word representations. We also describe a simple alternative to the hierarchical softmax called negative sampling. An inherent limitation of word representations is their indifference to word order and their inability to represent idiomatic phrases. For example, the meanings of “Canada” and “Air” cannot be easily combined to obtain “Air Canada”. Motivated by this example, we present a simple method for finding phrases in text, and show that learning good vector representations for millions of phrases is possible.}, journal={arXiv}, author={Mikolov, Tomas and Sutskever, Ilya and Chen, Kai and Corrado, Greg and Dean, Jeffrey}, year={2013} }
+
+@article{Elhage22, 
+title = {{Toy Models of Superposition}}, 
+author = {Nelson Elhage and Tristan Hume and Catherine Olsson and Nicholas Schiefer and Tom Henighan and Shauna Kravec and Zac Hatfield-Dodds and Robert Lasenby and Dawn Drain and Carol Chen and Roger Grosse and Sam McCandlish and Jared Kaplan and Dario Amodei and Martin Wattenberg and Christopher Olah}, 
+journal = {Transformer Circuits Thread}, 
+year = 2022,
+url = {https://transformer-circuits.pub/2022/toy_model/}
+}%  
+
+@inproceedings{DBLP:conf/iclr/GurneeT24,
+  author       = {Wes Gurnee and
+                  Max Tegmark},
+  title        = {Language Models Represent Space and Time},
+  booktitle    = {The Twelfth International Conference on Learning Representations,
+                  {ICLR} 2024, Vienna, Austria, May 7-11, 2024},
+  publisher    = {OpenReview.net},
+  year         = {2024},
+  url          = {https://openreview.net/forum?id=jE8xbmvFin},
+  timestamp    = {Wed, 07 Aug 2024 17:11:53 +0200},
+  biburl       = {https://dblp.org/rec/conf/iclr/GurneeT24.bib},
+  bibsource    = {dblp computer science bibliography, https://dblp.org}
+}
+
+@misc{gurnee2024languagemodelsrepresentspace,
+      title={Language Models Represent Space and Time}, 
+      author={Wes Gurnee and Max Tegmark},
+      year={2024},
+      eprint={2310.02207},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2310.02207}, 
+}
+
+@inproceedings{mikolov-etal-2013-linguistic,
+    title = "Linguistic Regularities in Continuous Space Word Representations",
+    author = "Mikolov, Tomas  and
+      Yih, Wen-tau  and
+      Zweig, Geoffrey",
+    editor = "Vanderwende, Lucy  and
+      Daum{\'e} III, Hal  and
+      Kirchhoff, Katrin",
+    booktitle = "Proceedings of the 2013 Conference of the North {A}merican Chapter of the Association for Computational Linguistics: Human Language Technologies",
+    month = jun,
+    year = "2013",
+    address = "Atlanta, Georgia",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/N13-1090",
+    pages = "746--751",
+}
+
+@article{Wu_Kan_Zeng_Li_2023,
+title={Singularformer: Learning to Decompose Self-Attention to Linearize the Complexity of Transformer},
+DOI={10.24963/ijcai.2023/493}, 
+abstractNote={Transformers achieve excellent performance in a variety of domains since they can capture long-distance dependencies through the self-attention mechanism. However, self-attention is computationally costly due to its quadratic complexity and high memory consumption. In this paper, we propose a novel Transformer variant (Singularformer) that uses neural networks to learn the singular value decomposition process of the attention matrix to design a linear-complexity and memory-efficient global self-attention mechanism. Specifically, we decompose the attention matrix into the product of three matrix factors based on singular value decomposition and design neural networks to learn these matrix factors, then the associative law of matrix multiplication is used to linearize the calculation of self-attention. The above procedure allows us to compute self-attention as two-dimensional reduction processes in the first and second token dimensional spaces, followed by a multi-head self-attention computational process on the first dimensional reduced token features. Experimental results on 8 real-world datasets demonstrate that Singularformer performs favorably against the other Transformer variants with lower time and space complexity. Our source code is publicly available at https://github.com/CSUBioGroup/Singularformer.}, 
+journal={Proceedings of the Thirty-Second International Joint Conference on Artificial Intelligence}, 
+author={Wu, Yifan and Kan, Shichao and Zeng, Min and Li, Min}, 
+year={2023}, 
+pages={4433–4441} }
+
+
+ @article{Ba_Kiros_Hinton_2016, 
+title={Layer Normalization}, 
+DOI={10.48550/arxiv.1607.06450}, 
+abstractNote={Training state-of-the-art, deep neural networks is computationally expensive. One way to reduce the training time is to normalize the activities of the neurons. A recently introduced technique called batch normalization uses the distribution of the summed input to a neuron over a mini-batch of training cases to compute a mean and variance which are then used to normalize the summed input to that neuron on each training case. This significantly reduces the training time in feed-forward neural networks. However, the effect of batch normalization is dependent on the mini-batch size and it is not obvious how to apply it to recurrent neural networks. In this paper, we transpose batch normalization into layer normalization by computing the mean and variance used for normalization from all of the summed inputs to the neurons in a layer on a single training case. Like batch normalization, we also give each neuron its own adaptive bias and gain which are applied after the normalization but before the non-linearity. Unlike batch normalization, layer normalization performs exactly the same computation at training and test times. It is also straightforward to apply to recurrent neural networks by computing the normalization statistics separately at each time step. Layer normalization is very effective at stabilizing the hidden state dynamics in recurrent networks. Empirically, we show that layer normalization can substantially reduce the training time compared with previously published techniques.}, 
+journal={arXiv}, 
+author={Ba, Jimmy Lei and Kiros, Jamie Ryan and Hinton, Geoffrey E}, 
+year={2016} 
+}
+
+ @book{Trefethen_Bau, title={Numerical Linear Algebra}, author={Trefethen, Lloyd and Bau III, David}, year = 1997, publisher = {SIAM} }
+
+@inproceedings{DBLP:conf/iclr/WangVCSS23,
+  author       = {Kevin Ro Wang and
+                  Alexandre Variengien and
+                  Arthur Conmy and
+                  Buck Shlegeris and
+                  Jacob Steinhardt},
+  title        = {Interpretability in the Wild: a Circuit for Indirect Object Identification
+                  in {GPT-2} Small},
+  booktitle    = {The Eleventh International Conference on Learning Representations,
+                  {ICLR} 2023, Kigali, Rwanda, May 1-5, 2023},
+  publisher    = {OpenReview.net},
+  year         = {2023},
+  url          = {https://openreview.net/forum?id=NpsVSN6o4ul},
+  timestamp    = {Wed, 24 Jul 2024 16:50:33 +0200},
+  biburl       = {https://dblp.org/rec/conf/iclr/WangVCSS23.bib},
+  bibsource    = {dblp computer science bibliography, https://dblp.org}
+}
+
+ @article{Mueller_2024, 
+title={Missed Causes and Ambiguous Effects: Counterfactuals Pose Challenges for Interpreting Neural Networks}, 
+DOI={10.48550/arxiv.2407.04690}, 
+abstractNote={Interpretability research takes counterfactual theories of causality for granted. Most causal methods rely on counterfactual interventions to inputs or the activations of particular model components, followed by observations of the change in models’ output logits or behaviors. While this yields more faithful evidence than correlational methods, counterfactuals nonetheless have key problems that bias our findings in specific and predictable ways. Specifically, (i) counterfactual theories do not effectively capture multiple independently sufficient causes of the same effect, which leads us to miss certain causes entirely; and (ii) counterfactual dependencies in neural networks are generally not transitive, which complicates methods for extracting and interpreting causal graphs from neural networks. We discuss the implications of these challenges for interpretability researchers and propose concrete suggestions for future work.}, journal={arXiv}, 
+author={Mueller, Aaron}, 
+year={2024} }
+
+ @article{Marks_Rager_Michaud_Belinkov_Bau_Mueller_2024, 
+title={Sparse Feature Circuits: Discovering and Editing Interpretable Causal Graphs in Language Models}, 
+abstractNote={We introduce methods for discovering and applying sparse feature circuits. These are causally implicated subnetworks of human-interpretable features for explaining language model behaviors. Circuits identified in prior work consist of polysemantic and difficult-to-interpret units like attention heads or neurons, rendering them unsuitable for many downstream applications. In contrast, sparse feature circuits enable detailed understanding of unanticipated mechanisms. Because they are based on fine-grained units, sparse feature circuits are useful for downstream tasks: We introduce SHIFT, where we improve the generalization of a classifier by ablating features that a human judges to be task-irrelevant. Finally, we demonstrate an entirely unsupervised and scalable interpretability pipeline by discovering thousands of sparse feature circuits for automatically discovered model behaviors.}, 
+journal={arXiv}, 
+author={Marks, Samuel and Rager, Can and Michaud, Eric J and Belinkov, Yonatan and Bau, David and Mueller, Aaron}, 
+year={2024} }
+
+@misc{lipton2017mythosmodelinterpretability,
+      title={The Mythos of Model Interpretability}, 
+      author={Zachary C. Lipton},
+      year={2017},
+      eprint={1606.03490},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/1606.03490}, 
+}
+
+@misc{hernandez2024linearityrelationdecodingtransformer,
+      title={Linearity of Relation Decoding in Transformer Language Models}, 
+      author={Evan Hernandez and Arnab Sen Sharma and Tal Haklay and Kevin Meng and Martin Wattenberg and Jacob Andreas and Yonatan Belinkov and David Bau},
+      year={2024},
+      eprint={2308.09124},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2308.09124}, 
+}
+
+@misc{levy2025languagemodelsencodenumbers,
+      title={Language Models Encode Numbers Using Digit Representations in Base 10}, 
+      author={Amit Arnold Levy and Mor Geva},
+      year={2025},
+      eprint={2410.11781},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2410.11781}, 
+}
+
+@misc{kantamneni2025languagemodelsusetrigonometry,
+      title={Language Models Use Trigonometry to Do Addition}, 
+      author={Subhash Kantamneni and Max Tegmark},
+      year={2025},
+      eprint={2502.00873},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI},
+      url={https://arxiv.org/abs/2502.00873}, 
+}
+
+@misc{engels2025languagemodelfeaturesonedimensionally,
+      title={Not All Language Model Features Are One-Dimensionally Linear}, 
+      author={Joshua Engels and Eric J. Michaud and Isaac Liao and Wes Gurnee and Max Tegmark},
+      year={2025},
+      eprint={2405.14860},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2405.14860}, 
+}
+
+@article{trinhOlympiadGeometryNature2025,
+	abstract = {Proving mathematical theorems at the olympiad level represents a notable milestone in human-level automated reasoning1--4, owing to their reputed difficulty among the world's best talents in pre-university mathematics. Current machine-learning approaches, however, are not applicable to most mathematical domains owing to the high cost of translating human proofs into machine-verifiable format. The problem is even worse for geometry because of its unique translation challenges1,5, resulting in severe scarcity of training data. We propose AlphaGeometry, a theorem prover for Euclidean plane geometry that sidesteps the need for human demonstrations by synthesizing millions of theorems and proofs across different levels of complexity. AlphaGeometry is a neuro-symbolic system that uses a neural language model, trained from scratch on our large-scale synthetic data, to guide a symbolic deduction engine through infinite branching points in challenging problems. On a test set of 30 latest olympiad-level problems, AlphaGeometry solves 25, outperforming the previous best method that only solves ten problems and approaching the performance of an average International Mathematical Olympiad (IMO) gold medallist. Notably, AlphaGeometry produces human-readable proofs, solves all geometry problems in the IMO 2000 and 2015 under human expert evaluation and discovers a generalized version of a translated IMO theorem in 2004.},
+	author = {Trinh, Trieu H. and Wu, Yuhuai and Le, Quoc V. and He, He and Luong, Thang},
+	date = {2024/01/01},
+	date-added = {2025-04-21 13:06:04 -0400},
+	date-modified = {2025-04-21 13:06:04 -0400},
+	doi = {10.1038/s41586-023-06747-5},
+	id = {Trinh2024},
+	isbn = {1476-4687},
+	journal = {Nature},
+	number = {7995},
+	pages = {476--482},
+	title = {Solving olympiad geometry without human demonstrations},
+	url = {https://doi.org/10.1038/s41586-023-06747-5},
+	volume = {625},
+	year = {2024},
+	bdsk-url-1 = {https://doi.org/10.1038/s41586-023-06747-5}}
+
+
+@misc{bubeck2023sparksartificialgeneralintelligence,
+      title={Sparks of Artificial General Intelligence: Early experiments with GPT-4}, 
+      author={Sébastien Bubeck and Varun Chandrasekaran and Ronen Eldan and Johannes Gehrke and Eric Horvitz and Ece Kamar and Peter Lee and Yin Tat Lee and Yuanzhi Li and Scott Lundberg and Harsha Nori and Hamid Palangi and Marco Tulio Ribeiro and Yi Zhang},
+      year={2023},
+      eprint={2303.12712},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2303.12712}, 
+}
+
+@article{DBLP:journals/corr/abs-2108-07258,
+  author       = {Rishi Bommasani and
+                  Drew A. Hudson and
+                  Ehsan Adeli and
+                  Russ B. Altman and
+                  Simran Arora and
+                  Sydney von Arx and
+                  Michael S. Bernstein and
+                  Jeannette Bohg and
+                  Antoine Bosselut and
+                  Emma Brunskill and
+                  Erik Brynjolfsson and
+                  Shyamal Buch and
+                  Dallas Card and
+                  Rodrigo Castellon and
+                  Niladri S. Chatterji and
+                  Annie S. Chen and
+                  Kathleen Creel and
+                  Jared Quincy Davis and
+                  Dorottya Demszky and
+                  Chris Donahue and
+                  Moussa Doumbouya and
+                  Esin Durmus and
+                  Stefano Ermon and
+                  John Etchemendy and
+                  Kawin Ethayarajh and
+                  Li Fei{-}Fei and
+                  Chelsea Finn and
+                  Trevor Gale and
+                  Lauren E. Gillespie and
+                  Karan Goel and
+                  Noah D. Goodman and
+                  Shelby Grossman and
+                  Neel Guha and
+                  Tatsunori Hashimoto and
+                  Peter Henderson and
+                  John Hewitt and
+                  Daniel E. Ho and
+                  Jenny Hong and
+                  Kyle Hsu and
+                  Jing Huang and
+                  Thomas Icard and
+                  Saahil Jain and
+                  Dan Jurafsky and
+                  Pratyusha Kalluri and
+                  Siddharth Karamcheti and
+                  Geoff Keeling and
+                  Fereshte Khani and
+                  Omar Khattab and
+                  Pang Wei Koh and
+                  Mark S. Krass and
+                  Ranjay Krishna and
+                  Rohith Kuditipudi and
+                  et al.},
+  title        = {On the Opportunities and Risks of Foundation Models},
+  journal      = {CoRR},
+  volume       = {abs/2108.07258},
+  year         = {2021},
+  url          = {https://arxiv.org/abs/2108.07258},
+  eprinttype    = {arXiv},
+  eprint       = {2108.07258},
+  timestamp    = {Fri, 08 Nov 2024 20:52:57 +0100},
+  biburl       = {https://dblp.org/rec/journals/corr/abs-2108-07258.bib},
+  bibsource    = {dblp computer science bibliography, https://dblp.org}
+}
+
+
+
+@article{McGrath_Rahtz_Kramar_Mikulik_Legg_2023, 
+title={The Hydra Effect: Emergent Self-repair in Language Model Computations}, 
+DOI={10.48550/arxiv.2307.15771}, abstractNote={We investigate the internal structure of language model computations using causal analysis and demonstrate two motifs: (1) a form of adaptive computation where ablations of one attention layer of a language model cause another layer to compensate (which we term the Hydra effect) and (2) a counterbalancing function of late MLP layers that act to downregulate the maximum-likelihood token. Our ablation studies demonstrate that language model layers are typically relatively loosely coupled (ablations to one layer only affect a small number of downstream layers). Surprisingly, these effects occur even in language models trained without any form of dropout. We analyse these effects in the context of factual recall and consider their implications for circuit-level attribution in language models.}, 
+journal={arXiv}, 
+author={McGrath, Thomas and Rahtz, Matthew and Kramar, Janos and Mikulik, Vladimir and Legg, Shane}, 
+year={2023} }
+
+@misc{TL,
+title = "Transformer Lens Main Demo Notebook",
+author = "Neel Nanda",
+howpublished = {\url{https://colab.research.google.com/github/neelnanda-io/TransformerLens/blob/main/demos/Main_Demo.ipynb}}
+}
+
+@misc{nanda2022transformerlens,
+    title = {TransformerLens},
+    author = {Neel Nanda and Joseph Bloom},
+    year = {2022},
+    howpublished = {\url{https://github.com/TransformerLensOrg/TransformerLens}},
+}
+
+@misc{svd-interpretable,
+title = "The Singular Value Decompositions of Transformer Weight Matrices are Highly Interpretable",
+author = "Beren Millidge and Sid Black",
+howpublished = {\url{https://www.alignmentforum.org/posts/mkbGjzxD8d8XqKHzA/the-singular-value-decompositions-of-transformer-weight}}
+}
+
+%howpublished = {\url{https://www.lesswrong.com/posts/mkbGjzxD8d8XqKHzA/the-singular-value-decompositions-of-transformer-weight}}
+
+
+@misc{ML-math,
+title = "Some {ML}-Related Math I Now Understand Better",
+author = "Fabian Roger",
+howpublished = {\url{https://www.lesswrong.com/posts/Tu8DYNCg63F4HYbXE/some-ml-related-math-i-now-understand-better}}
+}
+
+@misc{goldowskydill2023localizingmodelbehaviorpath,
+      title={Localizing Model Behavior with Path Patching}, 
+      author={Nicholas Goldowsky-Dill and Chris MacLeod and Lucas Sato and Aryaman Arora},
+      year={2023},
+      eprint={2304.05969},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2304.05969}, 
+}
+
+@misc{geiger2024findingalignmentsinterpretablecausal,
+      title={Finding Alignments Between Interpretable Causal Variables and Distributed Neural Representations}, 
+      author={Atticus Geiger and Zhengxuan Wu and Christopher Potts and Thomas Icard and Noah D. Goodman},
+      year={2024},
+      eprint={2303.02536},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI},
+      url={https://arxiv.org/abs/2303.02536}, 
+}
+
+ @article{Geiger_Lu_Icard_Potts_2021, 
+title={Causal Abstractions of Neural Networks}, 
+DOI={10.48550/arxiv.2106.02997}, 
+abstractNote={Structural analysis methods (e.g., probing and feature attribution) are increasingly important tools for neural network analysis. We propose a new structural analysis method grounded in a formal theory of causal abstraction that provides rich characterizations of model-internal representations and their roles in input/output behavior. In this method, neural representations are aligned with variables in interpretable causal models, and then interchange interventions are used to experimentally verify that the neural representations have the causal properties of their aligned variables. We apply this method in a case study to analyze neural models trained on Multiply Quantified Natural Language Inference (MQNLI) corpus, a highly complex NLI dataset that was constructed with a tree-structured natural logic causal model. We discover that a BERT-based model with state-of-the-art performance successfully realizes parts of the natural logic model’s causal structure, whereas a simpler baseline model fails to show any such structure, demonstrating that BERT representations encode the compositional structure of MQNLI.}, 
+journal={arXiv}, 
+author={Geiger, Atticus and Lu, Hanson and Icard, Thomas and Potts, Christopher}, 
+year={2021} }
+
+
+@misc{zhang2024bestpracticesactivationpatching,
+      title={Towards Best Practices of Activation Patching in Language Models: Metrics and Methods}, 
+      author={Fred Zhang and Neel Nanda},
+      year={2024},
+      eprint={2309.16042},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2309.16042}, 
+}
+
+@misc{ferrando2024informationflowroutesautomatically,
+      title={Information Flow Routes: Automatically Interpreting Language Models at Scale}, 
+      author={Javier Ferrando and Elena Voita},
+      year={2024},
+      eprint={2403.00824},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2403.00824}, 
+}
+
+@article{Wang_Zheng_Wan_Zhang_2024, 
+title={SVD-LLM: Truncation-aware Singular Value Decomposition for Large Language Model Compression}, 
+DOI={10.48550/arxiv.2403.07378}, 
+abstractNote={The advancements in Large Language Models (LLMs) have been hindered by their substantial sizes, which necessitate LLM compression methods for practical deployment. Singular Value Decomposition (SVD) offers a promising solution for LLM compression. However, state-of-the-art SVD-based LLM compression methods have two key limitations: truncating smaller singular values may lead to higher compression loss, and the lack of update on the compressed weight after SVD truncation. In this work, we propose SVD-LLM, a new SVD-based LLM compression method that addresses the limitations of existing methods. SVD-LLM incorporates a truncation-aware data whitening strategy to ensure a direct mapping between singular values and compression loss. Moreover, SVD-LLM adopts a layer-wise closed-form model parameter update strategy to compensate for accuracy degradation under high compression ratios. We evaluate SVD-LLM on a total of 10 datasets and eight models from three different LLM families at four different scales. Our results demonstrate the superiority of SVD-LLM over state-of-the-arts, especially at high model compression ratios.}, 
+journal={arXiv}, 
+author={Wang, Xin and Zheng, Yu and Wan, Zhongwei and Zhang, Mi}, 
+year={2024} }
+
+
+@misc{ThePile,
+title = "The first 10,000 elements of The Pile",
+author = {Neel Nanda},
+howpublished = {\url{https://huggingface.co/datasets/NeelNanda/pile-10k}},
+year = 2024
+}
+
+@inproceedings{
+sharma2024the,
+title={The Truth is in There: Improving Reasoning in Language Models with Layer-Selective Rank Reduction},
+author={Pratyusha Sharma and Jordan T. Ash and Dipendra Misra},
+booktitle={The Twelfth International Conference on Learning Representations},
+year={2024},
+url={https://openreview.net/forum?id=ozX92bu8VA}
+}
+
+
+ @article{Makelov_Lange_Nanda_2023, 
+title={Is This the Subspace You Are Looking for? An Interpretability Illusion for Subspace Activation Patching}, 
+DOI={10.48550/arxiv.2311.17030}, 
+abstractNote={Mechanistic interpretability aims to understand model behaviors in terms of specific, interpretable features, often hypothesized to manifest as low-dimensional subspaces of activations. Specifically, recent studies have explored subspace interventions (such as activation patching) as a way to simultaneously manipulate model behavior and attribute the features behind it to given subspaces. In this work, we demonstrate that these two aims diverge, potentially leading to an illusory sense of interpretability. Counterintuitively, even if a subspace intervention makes the model’s output behave as if the value of a feature was changed, this effect may be achieved by activating a dormant parallel pathway leveraging another subspace that is causally disconnected from model outputs. We demonstrate this phenomenon in a distilled mathematical example, in two real-world domains (the indirect object identification task and factual recall), and present evidence for its prevalence in practice. In the context of factual recall, we further show a link to rank-1 fact editing, providing a mechanistic explanation for previous work observing an inconsistency between fact editing performance and fact localization. However, this does not imply that activation patching of subspaces is intrinsically unfit for interpretability. To contextualize our findings, we also show what a success case looks like in a task (indirect object identification) where prior manual circuit analysis informs an understanding of the location of a feature. We explore the additional evidence needed to argue that a patched subspace is faithful.}, 
+journal={arXiv}, 
+author={Makelov, Aleksandar and Lange, Georg and Nanda, Neel}, year={2023} }
+
+ @article{Rushing_Nanda_2024, 
+title={Explorations of Self-Repair in Language Models}, 
+DOI={10.48550/arxiv.2402.15390}, 
+abstractNote={Prior interpretability research studying narrow distributions has preliminarily identified self-repair, a phenomena where if components in large language models are ablated, later components will change their behavior to compensate. Our work builds off this past literature, demonstrating that self-repair exists on a variety of models families and sizes when ablating individual attention heads on the full training distribution. We further show that on the full training distribution self-repair is imperfect, as the original direct effect of the head is not fully restored, and noisy, since the degree of self-repair varies significantly across different prompts (sometimes overcorrecting beyond the original effect). We highlight two different mechanisms that contribute to self-repair, including changes in the final LayerNorm scaling factor (which can repair up to 30% of the direct effect) and sparse sets of neurons implementing Anti-Erasure. We additionally discuss the implications of these results for interpretability practitioners and close with a more speculative discussion on the mystery of why self-repair occurs in these models at all, highlighting evidence for the Iterative Inference hypothesis in language models, a framework that predicts self-repair.}, 
+journal={arXiv}, 
+author={Rushing, Cody and Nanda, Neel}, 
+year={2024} }
+
+@article{bhaskar2025finding,
+  title={Finding transformer circuits with edge pruning},
+  author={Bhaskar, Adithya and Wettig, Alexander and Friedman, Dan and Chen, Danqi},
+  journal={Advances in Neural Information Processing Systems},
+  volume={37},
+  pages={18506--18534},
+  year={2025}
+}
+
+@inproceedings{
+syed2024attribution,
+title={Attribution Patching Outperforms Automated Circuit Discovery},
+author={Aaquib Syed and Can Rager and Arthur Conmy},
+booktitle={The 7th BlackboxNLP Workshop},
+year={2024},
+url={https://openreview.net/forum?id=RysbaxAnc6}
+}
+
+@inproceedings{
+prakash2024finetuning,
+title={Fine-Tuning Enhances Existing Mechanisms: A Case Study on Entity Tracking},
+author={Nikhil Prakash and Tamar Rott Shaham and Tal Haklay and Yonatan Belinkov and David Bau},
+booktitle={The Twelfth International Conference on Learning Representations},
+year={2024},
+url={https://openreview.net/forum?id=8sKcAWOf2D}
+}
+
+@inproceedings{
+zhang2025the,
+title={The Same but Different: Structural Similarities and Differences in Multilingual Language Modeling},
+author={Ruochen Zhang and Qinan Yu and Matianyu Zang and Carsten Eickhoff and Ellie Pavlick},
+booktitle={The Thirteenth International Conference on Learning Representations},
+year={2025},
+url={https://openreview.net/forum?id=NCrFA7dq8T}
+}
+
+@inproceedings{
+merullo2024circuit,
+title={Circuit Component Reuse Across Tasks in Transformer Language Models},
+author={Jack Merullo and Carsten Eickhoff and Ellie Pavlick},
+booktitle={The Twelfth International Conference on Learning Representations},
+year={2024},
+url={https://openreview.net/forum?id=fpoAYV6Wsk}
+}
+
+@article{lieberum2023does,
+  title={Does circuit analysis interpretability scale? evidence from multiple choice capabilities in chinchilla},
+  author={Lieberum, Tom and Rahtz, Matthew and Kram{\'a}r, J{\'a}nos and Nanda, Neel and Irving, Geoffrey and Shah, Rohin and Mikulik, Vladimir},
+  journal={arXiv preprint arXiv:2307.09458},
+  year={2023}
+}
+
+@article{hanna2023does,
+  title={How does GPT-2 compute greater-than?: Interpreting mathematical abilities in a pre-trained language model},
+  author={Hanna, Michael and Liu, Ollie and Variengien, Alexandre},
+  journal={Advances in Neural Information Processing Systems},
+  volume={36},
+  pages={76033--76060},
+  year={2023}
+}
+
+@inproceedings{
+lindner2023tracr,
+title={Tracr: Compiled Transformers as a Laboratory for Interpretability},
+author={David Lindner and Janos Kramar and Sebastian Farquhar and Matthew Rahtz and Thomas McGrath and Vladimir Mikulik},
+booktitle={Thirty-seventh Conference on Neural Information Processing Systems},
+year={2023},
+url={https://openreview.net/forum?id=tbbId8u7nP}
+}
+
+
+@article{athwin2identifying,
+  title={Identifying a preliminary circuit for predicting gendered pronouns in GPT-2 small, 2023},
+  author={Athwin, Chris and Corlouer, Guillaume and Kran, Esben and Barez, Fazl and Nanda, Neel},
+  journal={URL https://cmathw. itch. io/identifying-a-preliminary-circuit-for-predicting-gen dered-pronouns-in-gpt-2-smal}
+}
+
+@inproceedings{
+tigges2024llm,
+title={{LLM} Circuit Analyses Are Consistent Across Training and Scale},
+author={Curt Tigges and Michael Hanna and Qinan Yu and Stella Biderman},
+booktitle={The Thirty-eighth Annual Conference on Neural Information Processing Systems},
+year={2024},
+url={https://openreview.net/forum?id=3Ds5vNudIE}
+}
+
+@inproceedings{
+huben2024sparse,
+title={Sparse Autoencoders Find Highly Interpretable Features in Language Models},
+author={Robert Huben and Hoagy Cunningham and Logan Riggs Smith and Aidan Ewart and Lee Sharkey},
+booktitle={The Twelfth International Conference on Learning Representations},
+year={2024},
+url={https://openreview.net/forum?id=F76bwRSLeK}
+}
+
+@article{wiegreffe2024answer,
+  title={Answer, assemble, ace: Understanding how transformers answer multiple choice questions},
+  author={Wiegreffe, Sarah and Tafjord, Oyvind and Belinkov, Yonatan and Hajishirzi, Hannaneh and Sabharwal, Ashish},
+  journal={arXiv preprint arXiv:2407.15018},
+  year={2024}
+}
+
+@inproceedings{
+hanna2024have,
+title={Have Faith in Faithfulness: Going Beyond Circuit Overlap When Finding Model Mechanisms},
+author={Michael Hanna and Sandro Pezzelle and Yonatan Belinkov},
+booktitle={First Conference on Language Modeling},
+year={2024},
+url={https://openreview.net/forum?id=TZ0CCGDcuT}
+}
+
+@inproceedings{stolfo-etal-2023-mechanistic,
+    title = "A Mechanistic Interpretation of Arithmetic Reasoning in Language Models using Causal Mediation Analysis",
+    author = "Stolfo, Alessandro  and
+      Belinkov, Yonatan  and
+      Sachan, Mrinmaya",
+    editor = "Bouamor, Houda  and
+      Pino, Juan  and
+      Bali, Kalika",
+    booktitle = "Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing",
+    month = dec,
+    year = "2023",
+    address = "Singapore",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2023.emnlp-main.435/",
+    doi = "10.18653/v1/2023.emnlp-main.435",
+    pages = "7035--7052",
+    abstract = "Mathematical reasoning in large language models (LMs) has garnered significant attention in recent work, but there is a limited understanding of how these models process and store information related to arithmetic tasks within their architecture. In order to improve our understanding of this aspect of language models, we present a mechanistic interpretation of Transformer-based LMs on arithmetic questions using a causal mediation analysis framework. By intervening on the activations of specific model components and measuring the resulting changes in predicted probabilities, we identify the subset of parameters responsible for specific predictions. This provides insights into how information related to arithmetic is processed by LMs. Our experimental results indicate that LMs process the input by transmitting the information relevant to the query from mid-sequence early layers to the final token using the attention mechanism. Then, this information is processed by a set of MLP modules, which generate result-related information that is incorporated into the residual stream. To assess the specificity of the observed activation dynamics, we compare the effects of different model components on arithmetic queries with other tasks, including number retrieval from prompts and factual knowledge questions."
+}
+
+@article{team2024gemma,
+  title={Gemma: Open models based on gemini research and technology},
+  author={Team, Gemma and Mesnard, Thomas and Hardin, Cassidy and Dadashi, Robert and Bhupatiraju, Surya and Pathak, Shreya and Sifre, Laurent and Rivi{\`e}re, Morgane and Kale, Mihir Sanjay and Love, Juliette and others},
+  journal={arXiv preprint arXiv:2403.08295},
+  year={2024}
+}
+
+@article{dubey2024llama,
+  title={The llama 3 herd of models},
+  author={Dubey, Abhimanyu and Jauhri, Abhinav and Pandey, Abhinav and Kadian, Abhishek and Al-Dahle, Ahmad and Letman, Aiesha and Mathur, Akhil and Schelten, Alan and Yang, Amy and Fan, Angela and others},
+  journal={arXiv preprint arXiv:2407.21783},
+  year={2024}
+}
+
+@inproceedings{biderman2023pythia,
+  title={Pythia: A suite for analyzing large language models across training and scaling},
+  author={Biderman, Stella and Schoelkopf, Hailey and Anthony, Quentin Gregory and Bradley, Herbie and O’Brien, Kyle and Hallahan, Eric and Khan, Mohammad Aflah and Purohit, Shivanshu and Prashanth, USVSN Sai and Raff, Edward and others},
+  booktitle={International Conference on Machine Learning},
+  pages={2397--2430},
+  year={2023},
+  organization={PMLR}
+}
+
+@misc{hfGemma2blog,
+  author    = {Schmid, Philipp and Sanseviero, Omar and Castricato, Louis and Cuenca, Pedro},
+  title     = {Welcome Gemma 2 - Google's new open LLM},
+  year      = {2024},
+  month     = {6},
+  day       = {27},
+  howpublished       = {\url{https://huggingface.co/blog/gemma2}},
+  url       = {https://huggingface.co/blog/gemma2},
+  urldate   = {2025-05-14},
+  note      = {Accessed on: 2025-05-14}
+}
