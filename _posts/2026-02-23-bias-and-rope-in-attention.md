@@ -170,10 +170,14 @@ This mirrors Appendix B: position effects are absorbed into transformed vectors 
   <iframe src="{{ '/assets/plotly/rope-geometric-pipeline.html' | relative_url }}" frameborder="0" scrolling="no" height="660px" width="100%" style="border: 1px solid #ddd; background: #fff;"></iframe>
 </div>
 
-## 6. Appendix: condition numbers in practice
+## 6. When the model has both RoPE and Bias
+
+These two derivations combine directly, so bias+RoPE models (e.g., Pythia) can still be written with transformed token vectors and one fixed $\Omega = W_Q W_K^\top$.
+
+## 7. Appendix: condition numbers in practice
 
 The derivations rely on $W_Q$ and $W_K$ being well-conditioned (full column rank, stable pseudoinverse behavior).
-Appendix B.4 reports this holds for the studied models (condition numbers below 1000, usually much smaller), including GPT-2 small, Pythia-160M, and Gemma-2 2B. Below are the per-matrix plots converted from your PDF figures.
+Appendix B.4 reports this holds for the studied models (condition numbers below 1000, usually much smaller), including GPT-2 small, Pythia-160M, and Gemma-2 2B.
 
 ### GPT-2 small
 
