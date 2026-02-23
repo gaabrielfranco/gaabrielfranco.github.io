@@ -76,6 +76,11 @@ ninja.data = [{
           description: "",
           section: "News",handler: () => {
               window.location.href = "/news/acl25_findings_paper/";
+            },},{id: "news-our-paper-quot-pinpointing-attention-causal-communication-in-language-models-quot-has-been-accepted-at-neurips-25",
+          title: 'Our paper &amp;quot;Pinpointing Attention-Causal Communication in Language Models&amp;quot; has been accepted at NeurIPS...',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/neurips25_paper/";
             },},{id: "projects-project-1",
           title: 'project 1',
           description: "with background image",

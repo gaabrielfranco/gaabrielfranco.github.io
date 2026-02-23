@@ -1,94 +1,324 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>RoPE Geometric Pipeline</title>
-  <style>
-    body { margin: 0; font-family: Arial, sans-serif; background: #fff; color: #111; }
-    .wrap { max-width: 1280px; margin: 0 auto; padding: 10px 12px 14px; }
-    .ctrl { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
-    .ctrl label { font-size: 14px; }
-    .grid { display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: auto auto; gap: 10px; align-items: start; }
-    .panel { border: 1px solid #ddd; border-radius: 8px; background: #fff; padding: 6px; }
-    .path-a { border-color: #f0b7b5; }
-    .path-b { border-color: #b7cdef; }
-    .span-rows { grid-row: 1 / span 2; }
-    .place-input { grid-column: 1; grid-row: 1 / span 2; }
-    .place-a1 { grid-column: 2; grid-row: 1; }
-    .place-a2 { grid-column: 3; grid-row: 1; }
-    .place-b1 { grid-column: 2; grid-row: 2; }
-    .place-b2 { grid-column: 3; grid-row: 2; }
-    .place-eq { grid-column: 4; grid-row: 1 / span 2; }
-    .place-input,
-    .place-eq { align-self: center; }
-    .title { font-size: 14px; margin: 0 0 6px; min-height: 30px; display: flex; align-items: center; }
-    .tex { height: 22px; width: auto; max-width: 100%; }
-    .tex.eq { height: 24px; vertical-align: middle; }
-    svg { width: 100%; height: 250px; display: block; }
-    .eq { margin-top: 10px; font-size: 14px; }
-    @media (max-width: 1000px){ .grid { grid-template-columns: 1fr; grid-template-rows: none; } .span-rows { grid-row: auto; } }
-  </style>
-</head>
-<body>
-<div class="wrap">
-  <div class="ctrl">
-    <label>theta</label>
-    <input id="theta" type="range" min="-180" max="180" step="1" value="38" style="width:300px" />
-    <span id="tval">38 deg</span>
-  </div>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>RoPE Geometric Pipeline</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #fff;
+        color: #111;
+      }
+      .wrap {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 10px 12px 14px;
+      }
+      .ctrl {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 10px;
+      }
+      .ctrl label {
+        font-size: 14px;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: auto auto;
+        gap: 10px;
+        align-items: start;
+      }
+      .panel {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        background: #fff;
+        padding: 6px;
+      }
+      .path-a {
+        border-color: #f0b7b5;
+      }
+      .path-b {
+        border-color: #b7cdef;
+      }
+      .span-rows {
+        grid-row: 1 / span 2;
+      }
+      .place-input {
+        grid-column: 1;
+        grid-row: 1 / span 2;
+      }
+      .place-a1 {
+        grid-column: 2;
+        grid-row: 1;
+      }
+      .place-a2 {
+        grid-column: 3;
+        grid-row: 1;
+      }
+      .place-b1 {
+        grid-column: 2;
+        grid-row: 2;
+      }
+      .place-b2 {
+        grid-column: 3;
+        grid-row: 2;
+      }
+      .place-eq {
+        grid-column: 4;
+        grid-row: 1 / span 2;
+      }
+      .place-input,
+      .place-eq {
+        align-self: center;
+      }
+      .title {
+        font-size: 14px;
+        margin: 0 0 6px;
+        min-height: 30px;
+        display: flex;
+        align-items: center;
+      }
+      .tex {
+        height: 22px;
+        width: auto;
+        max-width: 100%;
+      }
+      .tex.eq {
+        height: 24px;
+        vertical-align: middle;
+      }
+      svg {
+        width: 100%;
+        height: 250px;
+        display: block;
+      }
+      .eq {
+        margin-top: 10px;
+        font-size: 14px;
+      }
+      @media (max-width: 1000px) {
+        .grid {
+          grid-template-columns: 1fr;
+          grid-template-rows: none;
+        }
+        .span-rows {
+          grid-row: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="ctrl">
+        <label>theta</label>
+        <input id="theta" type="range" min="-180" max="180" step="1" value="38" style="width: 300px" />
+        <span id="tval">38 deg</span>
+      </div>
 
-  <div class="grid">
-    <div class="panel span-rows place-input"><p class="title"><img class="tex" src="../img/posts/qk-bias-rope/tex/x_r3.svg" alt="x in R3" /></p><svg id="p1"></svg></div>
-    <div class="panel path-a place-a1"><p class="title"><img class="tex" src="../img/posts/qk-bias-rope/tex/r3_theta_x.svg" alt="R3 theta x" /></p><svg id="p2"></svg></div>
-    <div class="panel path-a place-a2"><p class="title"><img class="tex" src="../img/posts/qk-bias-rope/tex/yA_rope.svg" alt="yA rope" /></p><svg id="p3"></svg></div>
-    <div class="panel span-rows place-eq"><p class="title"><img class="tex" src="../img/posts/qk-bias-rope/tex/y_eq.svg" alt="yA equals yB" /></p><svg id="p6"></svg></div>
-    <div class="panel path-b place-b1"><p class="title"><img class="tex" src="../img/posts/qk-bias-rope/tex/px_only.svg" alt="Px" /></p><svg id="p4"></svg></div>
-    <div class="panel path-b place-b2"><p class="title"><img class="tex" src="../img/posts/qk-bias-rope/tex/yB_rope.svg" alt="yB rope" /></p><svg id="p5"></svg></div>
-  </div>
+      <div class="grid">
+        <div class="panel span-rows place-input">
+          <p class="title"><img class="tex" src="../img/posts/qk-bias-rope/tex/x_r3.svg" alt="x in R3" /></p>
+          <svg id="p1"></svg>
+        </div>
+        <div class="panel path-a place-a1">
+          <p class="title"><img class="tex" src="../img/posts/qk-bias-rope/tex/r3_theta_x.svg" alt="R3 theta x" /></p>
+          <svg id="p2"></svg>
+        </div>
+        <div class="panel path-a place-a2">
+          <p class="title"><img class="tex" src="../img/posts/qk-bias-rope/tex/yA_rope.svg" alt="yA rope" /></p>
+          <svg id="p3"></svg>
+        </div>
+        <div class="panel span-rows place-eq">
+          <p class="title"><img class="tex" src="../img/posts/qk-bias-rope/tex/y_eq.svg" alt="yA equals yB" /></p>
+          <svg id="p6"></svg>
+        </div>
+        <div class="panel path-b place-b1">
+          <p class="title"><img class="tex" src="../img/posts/qk-bias-rope/tex/px_only.svg" alt="Px" /></p>
+          <svg id="p4"></svg>
+        </div>
+        <div class="panel path-b place-b2">
+          <p class="title"><img class="tex" src="../img/posts/qk-bias-rope/tex/yB_rope.svg" alt="yB rope" /></p>
+          <svg id="p5"></svg>
+        </div>
+      </div>
 
-  <div id="eq" class="eq"></div>
-</div>
+      <div id="eq" class="eq"></div>
+    </div>
 
-<script>
-function mv33(A,v){ return [A[0][0]*v[0]+A[0][1]*v[1]+A[0][2]*v[2],A[1][0]*v[0]+A[1][1]*v[1]+A[1][2]*v[2],A[2][0]*v[0]+A[2][1]*v[1]+A[2][2]*v[2]]; }
-function mv23(P,v){ return [P[0][0]*v[0]+P[0][1]*v[1]+P[0][2]*v[2], P[1][0]*v[0]+P[1][1]*v[1]+P[1][2]*v[2]]; }
-function mv22(A,v){ return [A[0][0]*v[0]+A[0][1]*v[1],A[1][0]*v[0]+A[1][1]*v[1]]; }
-function norm2(v){ return Math.hypot(...v); }
-function R3z(t){ const c=Math.cos(t),s=Math.sin(t); return [[c,-s,0],[s,c,0],[0,0,1]]; }
-function R2(t){ const c=Math.cos(t),s=Math.sin(t); return [[c,-s],[s,c]]; }
+    <script>
+      function mv33(A, v) {
+        return [
+          A[0][0] * v[0] + A[0][1] * v[1] + A[0][2] * v[2],
+          A[1][0] * v[0] + A[1][1] * v[1] + A[1][2] * v[2],
+          A[2][0] * v[0] + A[2][1] * v[1] + A[2][2] * v[2],
+        ];
+      }
+      function mv23(P, v) {
+        return [P[0][0] * v[0] + P[0][1] * v[1] + P[0][2] * v[2], P[1][0] * v[0] + P[1][1] * v[1] + P[1][2] * v[2]];
+      }
+      function mv22(A, v) {
+        return [A[0][0] * v[0] + A[0][1] * v[1], A[1][0] * v[0] + A[1][1] * v[1]];
+      }
+      function norm2(v) {
+        return Math.hypot(...v);
+      }
+      function R3z(t) {
+        const c = Math.cos(t),
+          s = Math.sin(t);
+        return [
+          [c, -s, 0],
+          [s, c, 0],
+          [0, 0, 1],
+        ];
+      }
+      function R2(t) {
+        const c = Math.cos(t),
+          s = Math.sin(t);
+        return [
+          [c, -s],
+          [s, c],
+        ];
+      }
 
-const x=[0.95,-0.58,0.92];
-const P=[[1,0,0],[0,1,0]];
+      const x = [0.95, -0.58, 0.92];
+      const P = [
+        [1, 0, 0],
+        [0, 1, 0],
+      ];
 
-function create(el, tag, attrs){ const n=document.createElementNS('http://www.w3.org/2000/svg', tag); for(const k in attrs) n.setAttribute(k, attrs[k]); el.appendChild(n); return n; }
-function clear(el){ while(el.firstChild) el.removeChild(el.firstChild); }
-function project3(v){ const ax=0.75, az=0.45; return [v[0]+ax*v[1], v[2]+az*v[1]]; }
-function drawAxes2(svg, lim){ const w=svg.viewBox.baseVal.width,h=svg.viewBox.baseVal.height; const map=(p)=>[w/2+p[0]*(w*0.38/lim), h/2-p[1]*(h*0.38/lim)]; for(let t=-2;t<=2;t++){const a=map([t,-lim]),b=map([t,lim]);create(svg,'line',{x1:a[0],y1:a[1],x2:b[0],y2:b[1],stroke:'#eee'}); const c=map([-lim,t]),d=map([lim,t]);create(svg,'line',{x1:c[0],y1:c[1],x2:d[0],y2:d[1],stroke:'#eee'});} const x0=map([-lim,0]),x1=map([lim,0]);create(svg,'line',{x1:x0[0],y1:x0[1],x2:x1[0],y2:x1[1],stroke:'#999'}); const y0=map([0,-lim]),y1=map([0,lim]);create(svg,'line',{x1:y0[0],y1:y0[1],x2:y1[0],y2:y1[1],stroke:'#999'}); return map; }
-function drawAxes3(svg, lim){ const w=svg.viewBox.baseVal.width,h=svg.viewBox.baseVal.height; const map=(v)=>{const p=project3(v); return [w/2+p[0]*(w*0.28/lim), h/2-p[1]*(h*0.28/lim)];}; const axes=[[[0,0,0],[lim,0,0]],[[0,0,0],[0,lim,0]],[[0,0,0],[0,0,lim]],[[0,0,0],[-lim,0,0]],[[0,0,0],[0,-lim,0]],[[0,0,0],[0,0,-lim]]]; for(const a of axes){const p0=map(a[0]),p1=map(a[1]);create(svg,'line',{x1:p0[0],y1:p0[1],x2:p1[0],y2:p1[1],stroke:'#999'});} return map; }
-function drawVec2(svg,v,color,label,lim=2){ const map=drawAxes2(svg,lim); const o=map([0,0]),p=map(v); create(svg,'line',{x1:o[0],y1:o[1],x2:p[0],y2:p[1],stroke:color,'stroke-width':3}); create(svg,'circle',{cx:p[0],cy:p[1],r:4,fill:color}); create(svg,'text',{x:p[0]+7,y:p[1]-7,fill:'#111','font-size':'12'}).textContent=label; }
-function drawVec3(svg,v,color,label,lim=2){ const map=drawAxes3(svg,lim); const o=map([0,0,0]),p=map(v); create(svg,'line',{x1:o[0],y1:o[1],x2:p[0],y2:p[1],stroke:color,'stroke-width':3}); create(svg,'circle',{cx:p[0],cy:p[1],r:4,fill:color}); create(svg,'text',{x:p[0]+7,y:p[1]-7,fill:'#111','font-size':'12'}).textContent=label; }
-function setupViews(){ for(const id of ['p1','p2','p3','p4','p5','p6']) document.getElementById(id).setAttribute('viewBox','0 0 360 250'); }
+      function create(el, tag, attrs) {
+        const n = document.createElementNS("http://www.w3.org/2000/svg", tag);
+        for (const k in attrs) n.setAttribute(k, attrs[k]);
+        el.appendChild(n);
+        return n;
+      }
+      function clear(el) {
+        while (el.firstChild) el.removeChild(el.firstChild);
+      }
+      function project3(v) {
+        const ax = 0.75,
+          az = 0.45;
+        return [v[0] + ax * v[1], v[2] + az * v[1]];
+      }
+      function drawAxes2(svg, lim) {
+        const w = svg.viewBox.baseVal.width,
+          h = svg.viewBox.baseVal.height;
+        const map = (p) => [w / 2 + p[0] * ((w * 0.38) / lim), h / 2 - p[1] * ((h * 0.38) / lim)];
+        for (let t = -2; t <= 2; t++) {
+          const a = map([t, -lim]),
+            b = map([t, lim]);
+          create(svg, "line", { x1: a[0], y1: a[1], x2: b[0], y2: b[1], stroke: "#eee" });
+          const c = map([-lim, t]),
+            d = map([lim, t]);
+          create(svg, "line", { x1: c[0], y1: c[1], x2: d[0], y2: d[1], stroke: "#eee" });
+        }
+        const x0 = map([-lim, 0]),
+          x1 = map([lim, 0]);
+        create(svg, "line", { x1: x0[0], y1: x0[1], x2: x1[0], y2: x1[1], stroke: "#999" });
+        const y0 = map([0, -lim]),
+          y1 = map([0, lim]);
+        create(svg, "line", { x1: y0[0], y1: y0[1], x2: y1[0], y2: y1[1], stroke: "#999" });
+        return map;
+      }
+      function drawAxes3(svg, lim) {
+        const w = svg.viewBox.baseVal.width,
+          h = svg.viewBox.baseVal.height;
+        const map = (v) => {
+          const p = project3(v);
+          return [w / 2 + p[0] * ((w * 0.28) / lim), h / 2 - p[1] * ((h * 0.28) / lim)];
+        };
+        const axes = [
+          [
+            [0, 0, 0],
+            [lim, 0, 0],
+          ],
+          [
+            [0, 0, 0],
+            [0, lim, 0],
+          ],
+          [
+            [0, 0, 0],
+            [0, 0, lim],
+          ],
+          [
+            [0, 0, 0],
+            [-lim, 0, 0],
+          ],
+          [
+            [0, 0, 0],
+            [0, -lim, 0],
+          ],
+          [
+            [0, 0, 0],
+            [0, 0, -lim],
+          ],
+        ];
+        for (const a of axes) {
+          const p0 = map(a[0]),
+            p1 = map(a[1]);
+          create(svg, "line", { x1: p0[0], y1: p0[1], x2: p1[0], y2: p1[1], stroke: "#999" });
+        }
+        return map;
+      }
+      function drawVec2(svg, v, color, label, lim = 2) {
+        const map = drawAxes2(svg, lim);
+        const o = map([0, 0]),
+          p = map(v);
+        create(svg, "line", { x1: o[0], y1: o[1], x2: p[0], y2: p[1], stroke: color, "stroke-width": 3 });
+        create(svg, "circle", { cx: p[0], cy: p[1], r: 4, fill: color });
+        create(svg, "text", { x: p[0] + 7, y: p[1] - 7, fill: "#111", "font-size": "12" }).textContent = label;
+      }
+      function drawVec3(svg, v, color, label, lim = 2) {
+        const map = drawAxes3(svg, lim);
+        const o = map([0, 0, 0]),
+          p = map(v);
+        create(svg, "line", { x1: o[0], y1: o[1], x2: p[0], y2: p[1], stroke: color, "stroke-width": 3 });
+        create(svg, "circle", { cx: p[0], cy: p[1], r: 4, fill: color });
+        create(svg, "text", { x: p[0] + 7, y: p[1] - 7, fill: "#111", "font-size": "12" }).textContent = label;
+      }
+      function setupViews() {
+        for (const id of ["p1", "p2", "p3", "p4", "p5", "p6"]) document.getElementById(id).setAttribute("viewBox", "0 0 360 250");
+      }
 
-function draw(){
-  const deg=parseFloat(document.getElementById('theta').value); document.getElementById('tval').textContent=deg.toFixed(0)+' deg';
-  const t=deg*Math.PI/180; const R3=R3z(t), R=R2(t);
-  const xR=mv33(R3,x); const yA=mv23(P,xR); const y0=mv23(P,x); const yB=mv22(R,y0); const e=norm2([yA[0]-yB[0],yA[1]-yB[1]]);
-  for(const id of ['p1','p2','p3','p4','p5','p6']) clear(document.getElementById(id));
-  drawVec3(document.getElementById('p1'),x,'#111','x');
-  drawVec3(document.getElementById('p2'),xR,'#d9534f','R3x');
-  drawVec2(document.getElementById('p3'),yA,'#d9534f','yA');
-  drawVec2(document.getElementById('p4'),y0,'#111','Px');
-  drawVec2(document.getElementById('p5'),yB,'#1f77b4','yB');
-  const p6=document.getElementById('p6'); drawVec2(p6,yA,'#d9534f','yA');
-  const map=drawAxes2(p6,2), a=map(yA), b=map(yB); create(p6,'line',{x1:a[0],y1:a[1],x2:b[0],y2:b[1],stroke:'#111','stroke-dasharray':'4 3'}); create(p6,'circle',{cx:b[0],cy:b[1],r:3.5,fill:'#1f77b4'}); create(p6,'text',{x:b[0]+7,y:b[1]+14,fill:'#111','font-size':'12'}).textContent='yB';
-  document.getElementById('eq').innerHTML =
-    '<img class=\"tex eq\" src=\"../img/posts/qk-bias-rope/tex/eq_rope.svg\" alt=\"equation\" />'
-    + ' &nbsp; '
-    + ' ||yA - yB||2 = ' + e.toExponential(2);
-}
+      function draw() {
+        const deg = parseFloat(document.getElementById("theta").value);
+        document.getElementById("tval").textContent = deg.toFixed(0) + " deg";
+        const t = (deg * Math.PI) / 180;
+        const R3 = R3z(t),
+          R = R2(t);
+        const xR = mv33(R3, x);
+        const yA = mv23(P, xR);
+        const y0 = mv23(P, x);
+        const yB = mv22(R, y0);
+        const e = norm2([yA[0] - yB[0], yA[1] - yB[1]]);
+        for (const id of ["p1", "p2", "p3", "p4", "p5", "p6"]) clear(document.getElementById(id));
+        drawVec3(document.getElementById("p1"), x, "#111", "x");
+        drawVec3(document.getElementById("p2"), xR, "#d9534f", "R3x");
+        drawVec2(document.getElementById("p3"), yA, "#d9534f", "yA");
+        drawVec2(document.getElementById("p4"), y0, "#111", "Px");
+        drawVec2(document.getElementById("p5"), yB, "#1f77b4", "yB");
+        const p6 = document.getElementById("p6");
+        drawVec2(p6, yA, "#d9534f", "yA");
+        const map = drawAxes2(p6, 2),
+          a = map(yA),
+          b = map(yB);
+        create(p6, "line", { x1: a[0], y1: a[1], x2: b[0], y2: b[1], stroke: "#111", "stroke-dasharray": "4 3" });
+        create(p6, "circle", { cx: b[0], cy: b[1], r: 3.5, fill: "#1f77b4" });
+        create(p6, "text", { x: b[0] + 7, y: b[1] + 14, fill: "#111", "font-size": "12" }).textContent = "yB";
+        document.getElementById("eq").innerHTML =
+          '<img class="tex eq" src="../img/posts/qk-bias-rope/tex/eq_rope.svg" alt="equation" />' +
+          " &nbsp; " +
+          " ||yA - yB||2 = " +
+          e.toExponential(2);
+      }
 
-setupViews(); document.getElementById('theta').addEventListener('input',draw); draw();
-</script>
-</body>
+      setupViews();
+      document.getElementById("theta").addEventListener("input", draw);
+      draw();
+    </script>
+  </body>
 </html>
