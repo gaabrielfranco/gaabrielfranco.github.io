@@ -37,15 +37,15 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/teaching-service/";
           },
-        },{id: "post-a-distill-style-blog-post",
+        },{id: "post-handling-bias-and-rope-in-qk-attention-with-a-unified-geometric-view",
         
-          title: "a distill-style blog post",
+          title: "Handling Bias and RoPE in QK Attention with a Unified Geometric View",
         
-        description: "an example of a distill-style blog post and main elements",
+        description: "A practical geometric view for analyzing QK circuits with bias and RoPE using a single bilinear form",
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/2025/rope/";
+            window.location.href = "/blog/2026/bias-and-rope-in-attention/";
           
         },
       },{id: "books-the-godfather",
