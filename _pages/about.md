@@ -27,8 +27,6 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I am Gabriel Franco, a fifth-year Computer Science PhD candidate at Boston University, advised by Prof. [Mark Crovella](https://www.cs.bu.edu/fac/crovella/). My research aims to reverse-engineer the internal computations of large language models (LLMs), moving beyond correlational observations to understand _how_ and _why_ they truly work.
+I am a fifth-year Computer Science Ph.D. candidate at Boston University, advised by Prof. [Mark Crovella](https://www.cs.bu.edu/fac/crovella/). Before joining BU, I earned my BSc and MSc from the Federal University of Viçosa in Brazil, advised by Prof. [Giovanni Comarela](http://www.inf.ufes.br/~gc/).
 
-My primary focus is on **mechanistic interpretability**. I develop methods to uncover the causal drivers of model behavior, with a particular interest in causality within the attention mechanism. My approach is to tackle interpretability by using the model's own computations, leveraging the low-rank structures that naturally arise in these systems.
-
-Before focusing on interpretability, my Master's research with Prof. [Giovanni Comarela](http://www.inf.ufes.br/~gc/) at the Federal University of Viçosa explored weakly supervised learning, specifically the problem of Learning from Label Proportions (LLP). I also have industry experience as a Data Scientist at SEEK and Localiza, where I designed, deployed, and optimized production-level machine learning models and recommender systems.
+My primary research focuses on the mechanistic interpretability of large language models (LLMs). I develop methods to uncover the causal drivers of model behavior, with a particular interest in the low-rank signals that arise within the attention mechanism.
