@@ -69,3 +69,13 @@ Site overhaul (July 2026), branch `site-overhaul`. Log of all changes, grouped b
 - Search Console verification token (add property → paste into `google_site_verification`, set `enable_google_verification: true`); submit `sitemap.xml` after deploy.
 - Confirm ORCID `0000-0003-0702-0146`, then uncomment in `socials.yml`.
 - giscus `category_id` is still empty in `_config.yml` (blog comments won't post until set) — grab it from giscus.app.
+
+## Phase G — Blog draft rewritten for the ACC++ paper
+
+- Rewrote `_posts/2025-12-01-acc.md` from the old ACC (NeurIPS'25) explainer into a post about the new paper **"Finding Interpretable Prompt-Specific Circuits in Language Models"** (arXiv:2602.13483 v2), copying the paper and MechInterp-workshop poster language as literally as possible.
+- Updated frontmatter: new title/description, author list (Franco, Tassis, Rohr, Crovella), date 2026-05-13. **Kept `published: false`** — the paper is under review at NeurIPS, so nothing goes live.
+- Content follows the paper's narrative and wording: the question (why each head attends where it does) → from ACC to ACC++ (two conceptual advances + one technical advance, verbatim) → the 4-step method → circuits 2×–10× smaller with 50–90% fewer components → autointerpretation (63%/50%/31% interpretable, SAE-baseline comparison) → "no single circuit for IOI" (ABBA vs BABA clustering, name-mover head (9,9) receiving different signals) → multilingual (components reused, signals language-specific; URIEL+ correlations r=0.83/0.88) → limitations (verbatim from the paper).
+- Figures: extracted 4 figures directly from the paper PDF (`_papers/2602.13483v2.pdf`) via pdftoppm — method diagram (Fig 1), IOI clustering (Fig 3), interpretable ABBA/BABA traces (Fig 5), multilingual clustering (Fig 6) — into `assets/img/posts/accpp/`. The old `assets/img/posts/acc/` figures remain (now reused as project-card thumbnails).
+- `<d-cite>` references use only keys already present in `pinpointing-attention.bib`; the ACC prior work and the singular-vectors companion are linked in prose (no new bib entries added, per CODEX rules).
+- Per the agreed change-tracking convention, this rewrite carries **no inline CHANGED comments** (previous ones removed); the record lives here.
+- Verified: builds with `--unpublished` with no errors; 31 citations resolve (0 broken), all 4 figures present, mermaid pipeline diagram and MathJax render.
