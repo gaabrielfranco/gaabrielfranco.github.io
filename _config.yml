@@ -121,10 +121,6 @@ giscus:
   emit_metadata: 0
   lang: en
 
-# Disqus comments (DEPRECATED)
-disqus_shortname: al-folio # put your disqus shortname
-# https://help.disqus.com/en/articles/1717111-what-s-a-shortname
-
 # External sources.
 # If you have blog posts published on medium.com or other external sources,
 # you can display them in your blog by adding a link to the RSS feed.
@@ -200,10 +196,10 @@ exclude:
   - README.md
   - readme_preview/
   - vendor
-  - _pages/about_einstein.md
-  - _pages/books.mc
-  - _pages/dropdown.md
-  - _pages/profiles.md
+  - CODEX.md
+  - REVIEW.md
+  - requirements.txt
+  - _pages/books.md # temporarily excluded until real book list is added
   - _pages/projects.md
   - _pages/repositories.md
 keep_files:
@@ -351,7 +347,7 @@ max_author_limit: 3 # leave blank to always show all authors
 more_authors_animation_delay: 10 # more authors are revealed on click using animation; smaller delay means faster animation
 
 # Enables publication thumbnails. If disabled, none of the publications will display thumbnails, even if specified in the bib entry.
-enable_publication_thumbnails: true
+enable_publication_thumbnails: false
 
 # -----------------------------------------------------------------------------
 # Jekyll Link Attributes
@@ -648,20 +644,5 @@ third_party_libraries:
 # Get external JSON data
 # -----------------------------------------------------------------------------
 
-jekyll_get_json:
-  - data: resume
-    json: assets/json/resume.json # it can also be an url
-
-jsonresume:
-  - basics
-  - work
-  - education
-  - publications
-  - projects
-  - volunteer
-  - awards
-  - certificates
-  - skills
-  - languages
-  - interests
-  - references
+# jekyll_get_json / jsonresume removed: the CV page is driven by _data/cv.yml
+# (the demo assets/json/resume.json was deleted).
