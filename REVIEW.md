@@ -93,3 +93,11 @@ Site overhaul (July 2026), branch `site-overhaul`. Log of all changes, grouped b
 - `<head>` on key pages carries Open Graph, Twitter card, and schema.org JSON-LD; `og_image.png` referenced absolutely.
 - Nav order: about / blog / publications / projects / repositories / cv / teaching & service.
 - Delivered as PR from `site-overhaul` → `main` for Gabriel to review and merge (merge triggers the GitHub Pages deploy).
+
+## Phase J — Follow-ups (Gabriel's inputs + fixes)
+
+- Gabriel provided: GA4 ID `G-XCTMYC52RG`, Search Console token, uncommented ORCID, flipped `enable_google_analytics`/`enable_google_verification` to true, and dropped in an updated `assets/pdf/CV.pdf`. Verified GA4 tag + verification meta appear in the build.
+- **giscus fixed**: the configured category "Comments" did not exist in the repo's Discussions (categories are Announcements/General/Ideas/Polls/Q&A/Show-and-tell). Switched to the giscus-recommended **Announcements** category with its real id `DIC_kwDOPjK62c4CuhmY` (fetched from giscus.app's public API). Values now bake into `assets/js/giscus-setup.js` at build. Comment posting also requires the **giscus GitHub App** installed on the repo (user action).
+- **ICML news dates** corrected to **2026-04-30** (ICML 2026 author-notification date; conference is Jul 7–9, 2026).
+- **Bookshelf → personal page**: removed `_pages/books.md` (per Gabriel, a bookshelf isn't the right fit); created `_pages/personal.md` (nav order 7, after teaching) as a scaffold for non-research interests (music, baking, gym, hobbies) with commented photo/gallery examples and `assets/img/personal/` as the image home. Content is placeholder for Gabriel to fill.
+- Verified: full build clean; nav is about / blog / publications / projects / repositories / cv / teaching & service / personal.

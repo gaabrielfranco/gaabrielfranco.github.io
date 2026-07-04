@@ -79,13 +79,13 @@ og_image: https://gaabrielfranco.github.io/assets/img/og_image.png # The site-wi
 
 # For Google Analytics, see https://support.google.com/analytics/answer/10447272?hl=en&ref_topic=14088998&sjid=5129943941510317771-SA#zippy=%2Cgoogle-sites
 # and follow the instructions for Google Sites. You will need to create a Google Analytics property and copy the Google tag ID.
-google_analytics: # TODO(Gabriel): paste your GA4 measurement ID here (format: G-XXXXXXXXXX), then set enable_google_analytics: true below
+google_analytics: G-XCTMYC52RG # GA4 measurement ID (format: G-XXXXXXXXXX)
 cronitor_analytics: # cronitor RUM analytics site ID (format: XXXXXXXXX)
 pirsch_analytics: # your Pirsch analytics site ID (length 32 characters)
 openpanel_analytics: # your Openpanel analytics client ID (format: XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX)
 
 # For Google Search Console, see https://support.google.com/webmasters/answer/9008080?hl=en#meta_tag_verification&zippy=%2Chtml-tag
-google_site_verification: # TODO(Gabriel): paste your Search Console verification token here, then set enable_google_verification: true below
+google_site_verification: xP7FEyNZReplaHy2nuChaQGqjMIxe6kNNkup6iURDE4
 bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 
 # -----------------------------------------------------------------------------
@@ -110,8 +110,8 @@ related_blog_posts:
 giscus:
   repo: gaabrielfranco/gaabrielfranco.github.io # <your-github-user-name>/<your-github-repo-name>
   repo_id: R_kgDOPjK62Q # leave empty or specify your repo_id (see https://giscus.app/)
-  category: Comments # name of the category under which discussions will be created
-  category_id: # leave empty or specify your category_id (see https://giscus.app/)
+  category: Announcements # giscus-recommended category type (only maintainers + giscus can open discussions)
+  category_id: DIC_kwDOPjK62c4CuhmY # the "Announcements" category id for this repo (see https://giscus.app/)
   mapping: title # identify discussions by post title
   strict: 1 # use strict identification mode
   reactions_enabled: 1 # enable (1) or disable (0) emoji reactions
@@ -199,7 +199,6 @@ exclude:
   - CODEX.md
   - REVIEW.md
   - requirements.txt
-  - _pages/books.md # temporarily excluded until real book list is added
 keep_files:
   - CNAME
   - .nojekyll
@@ -395,11 +394,11 @@ lazy_loading_images: true # enables lazy loading of images (recommended)
 # Optional Features
 # -----------------------------------------------------------------------------
 
-enable_google_analytics: false # enables google analytics
+enable_google_analytics: true # enables google analytics
 enable_cronitor_analytics: false # enables cronitor RUM analytics
 enable_pirsch_analytics: false # enables Pirsch analytics (https://pirsch.io/)
 enable_openpanel_analytics: false # enables Openpanel analytics (https://openpanel.dev/)
-enable_google_verification: false # enables google site verification
+enable_google_verification: true # enables google site verification
 enable_bing_verification: false # enables bing site verification
 enable_masonry: true # enables automatic project cards arrangement
 enable_math: true # enables math typesetting (uses MathJax)
