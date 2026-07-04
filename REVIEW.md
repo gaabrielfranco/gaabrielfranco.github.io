@@ -79,3 +79,17 @@ Site overhaul (July 2026), branch `site-overhaul`. Log of all changes, grouped b
 - `<d-cite>` references use only keys already present in `pinpointing-attention.bib`; the ACC prior work and the singular-vectors companion are linked in prose (no new bib entries added, per CODEX rules).
 - Per the agreed change-tracking convention, this rewrite carries **no inline CHANGED comments** (previous ones removed); the record lives here.
 - Verified: builds with `--unpublished` with no errors; 31 citations resolve (0 broken), all 4 figures present, mermaid pipeline diagram and MathJax render.
+
+## Phase H — Staged MIT postdoc (invisible)
+
+- `_news/mit_postdoc.md` with `published: false` and a `TODO(Gabriel)` note.
+- Commented-out bio line in `_pages/about.md` (HTML comment).
+- Verified: neither appears anywhere in the built `_site` (news, homepage, or as a leaked comment). Flip `published: true` (+ fix date) and uncomment the bio line when the position is public.
+
+## Phase I — Final verification
+
+- Full production build clean; `_site` contains no "Einstein"/"Godfather"/"lorem" and no `CODEX.md`/`REVIEW.md`/`requirements.txt`.
+- `sitemap.xml` regenerated: real pages only (about, blog, publications, projects + 3 project pages, repositories, cv, teaching-service, news, 4 news items, 1 published blog post). No demo project/book URLs.
+- `<head>` on key pages carries Open Graph, Twitter card, and schema.org JSON-LD; `og_image.png` referenced absolutely.
+- Nav order: about / blog / publications / projects / repositories / cv / teaching & service.
+- Delivered as PR from `site-overhaul` → `main` for Gabriel to review and merge (merge triggers the GitHub Pages deploy).
