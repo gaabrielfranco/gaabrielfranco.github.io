@@ -34,3 +34,11 @@ Site overhaul (July 2026), branch `site-overhaul`. Log of all changes, grouped b
 - New news items: `_news/icml26_entity_tracking.md`, `_news/icml26_singular_vectors.md`. **NOTE: dates set to 2026-05-01 as an estimated ICML notification date — Gabriel to confirm/adjust.**
 - Config: kept `enable_publication_thumbnails: true` because the venue badge shares that column; no `preview` fields defined, so badges render with **no** thumbnail images (exactly the requested look).
 - Verified: 11 venue badges render, 0 thumbnail images; Abs/Bib/HTML/Code/arXiv buttons render per entry; homepage selected-papers section shows the 4 chosen papers; "Empty slug" warnings gone.
+
+## Phase D — Data-driven CV page
+
+- Switched `_pages/cv.md` from the custom `cv2` layout to the stock `cv` layout (renders `_data/cv.yml`), kept the PDF download button via `cv_pdf: /assets/pdf/CV.pdf`, and added a left sidebar table of contents (`toc.sidebar: left`).
+- Deleted the custom `_layouts/cv2.liquid` (no longer used).
+- Rewrote `_data/cv.yml` with Gabriel's real CV, transcribed from `assets/pdf/CV.pdf` and updated with verified 2026 facts: Education, Research & Industry Experience (BU RA, Microsoft intern, SEEK, Localiza, CAPES, CNPq/FAPEMIG), Selected Honors & Awards, Academic Service (ICLR 2026/2025, NeurIPS 2025 + MI Workshop), Teaching, Other Academic Productions (book chapter + SBRC short course), Technical Skills, Languages.
+- Note: the demo `assets/json/resume.json` was already removed in Phase B, so the layout uses `_data/cv.yml` as the single source. The shipped `CV.pdf` is still the Nov 2025 export — **Gabriel to provide an updated PDF** (user-side checklist).
+- Verified: CV page renders all 9 sections from real data, PDF button links to `/assets/pdf/CV.pdf`, sidebar TOC present, no Einstein/Zurich/Nobel leftovers.

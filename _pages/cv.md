@@ -1,9 +1,11 @@
 ---
-layout: cv2
+layout: cv
 permalink: /cv/
 title: cv
 nav: true
 nav_order: 5
-cv_pdf: CV.pdf # you can also use external links here
-description: Available in PDF.
+cv_pdf: /assets/pdf/CV.pdf # PDF download link shown in the page header
+description: A full PDF version is also available.
+toc:
+  sidebar: left
 ---
