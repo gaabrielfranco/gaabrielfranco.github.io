@@ -1,15 +1,142 @@
 ---
 ---
 
-@INPROCEEDINGS{8923937,
+@article{tang2026entity,
+  title={Do Language Models Track Entities Across State Changes?},
+  author={Tang, Zilu and Zhao, Qiao and Franco, Gabriel and Wijaya, Derry and Mueller, Aaron and Schuster, Sebastian and Kim, Najoung},
+  journal={Proceedings of the 43rd International Conference on Machine Learning (ICML)},
+  year={2026},
+  abbr={ICML},
+  arxiv={2605.30233},
+  selected={true},
+  bibtex_show={true},
+  abstract={Entity tracking (ET), the ability to keep track of states, is a fundamental skill that underlies complex reasoning. An increasing amount of work investigates how transformer language models (LMs) solve entity binding without state changes. However, there is limited understanding of how non-toy LMs address ET problems of realistic difficulties expressed in natural language. To this end, we investigate the mechanisms underlying ET in more complex scenarios featuring multiple state-changing operations. We find that LMs do not incrementally track world states across tokens or query-relevant states across layers, but simply aggregate relevant information in parallel at the last token when the query becomes evident.}
+}
+
+@article{franco2026singular,
+  title={Singular Vectors of Attention Heads Align with Features},
+  author={Franco, Gabriel and Loughridge, Carson and Crovella, Mark},
+  journal={Proceedings of the 43rd International Conference on Machine Learning (ICML)},
+  year={2026},
+  abbr={ICML},
+  arxiv={2602.13524},
+  code={https://github.com/gaabrielfranco/svf-alignment},
+  selected={true},
+  bibtex_show={true},
+  abstract={Identifying feature representations in language models is a central task in mechanistic interpretability. Several recent studies have made the observation that feature representations can be inferred in some cases from singular vectors of attention matrices. However, sound justification for this phenomenon is lacking. In this paper we address that question, asking: why and when do singular vectors align with features? First, we demonstrate that singular vectors robustly align with features in a model where features can be directly observed. We then show theoretically that such alignment is expected under a range of conditions. We close by asking how, operationally, alignment may be recognized in real models where feature representations are not directly observable.}
+}
+
+@article{franco2026finding,
+  title={Finding Interpretable Prompt-Specific Circuits in Language Models},
+  author={Franco, Gabriel and Tassis, Lucas M. and Rohr, Azalea and Crovella, Mark},
+  journal={arXiv preprint arXiv:2602.13483},
+  year={2026},
+  abbr={arXiv},
+  arxiv={2602.13483},
+  code={https://github.com/gaabrielfranco/finding-highly-interpretable-circuits},
+  selected={true},
+  bibtex_show={true},
+  abstract={Understanding the internal circuits that language models use to solve tasks remains a central challenge in mechanistic interpretability. A crucial part of finding circuits is understanding why each attention head attends where it does. To this end, we introduce ACC++, an improved circuit-tracing method based on the principle of attention-causal communication (ACC), which identifies signals, i.e., contents of low dimensional subspaces that cause attention on a token pair. ACC++ extracts circuits from a single forward pass, without replacement models or patching. Circuits identified by ACC++ consist of components that are causal for the model's attention decisions, together with the low-dimensional signals used to communicate between them.}
+}
+
+@inproceedings{franco2025pinpointing,
+  title={Pinpointing Attention-Causal Communication in Language Models},
+  author={Franco, Gabriel and Crovella, Mark},
+  booktitle={Advances in Neural Information Processing Systems 38 (NeurIPS)},
+  year={2025},
+  abbr={NeurIPS},
+  html={https://openreview.net/forum?id=wUoK24u4x7},
+  code={https://github.com/gaabrielfranco/pinpointing-attention-causal-communication},
+  selected={true},
+  bibtex_show={true},
+  abstract={The attention mechanism plays a central role in the computations performed by transformer-based models, and understanding the reasons why heads attend to specific tokens can aid in interpretability of language models. Although considerable work has shown that models construct low-dimensional feature representations, little work has explicitly tied low-dimensional features to the attention mechanism itself. In this paper we work to bridge this gap by presenting methods for identifying attention-causal communication, meaning low-dimensional features that are written into and read from tokens, and that have a provable causal relationship to attention patterns. We show that by identifying those signals, we can perform prompt-specific circuit discovery in a single forward pass. Further, we show that signals can uncover unexplored mechanisms at work in the model, including a surprising degree of global coordination across attention heads.}
+}
+
+@inproceedings{calais-etal-2025-disentangling,
+  title={Disentangling Text and Math in Word Problems: Evidence for the Bidimensional Structure of Large Language Models' Reasoning},
+  author={Calais, Pedro and Franco, Gabriel and Tang, Zilu and Nikas, Themistoklis and Meira Jr., Wagner and Terzi, Evimaria and Crovella, Mark},
+  booktitle={Findings of the Association for Computational Linguistics: ACL 2025},
+  month=jul,
+  year={2025},
+  address={Vienna, Austria},
+  publisher={Association for Computational Linguistics},
+  abbr={ACL Findings},
+  html={https://aclanthology.org/2025.findings-acl.656/},
+  doi={10.18653/v1/2025.findings-acl.656},
+  pages={12671--12688},
+  isbn={979-8-89176-256-5},
+  bibtex_show={true},
+  abstract={Do LLMs process text and mathematics as a unified skill, or do these components rely on distinct underlying mechanisms? We investigate this question by disentangling the textual interpretation and mathematical solving steps in word problems drawn from Brazil's largest college entrance exam (ENEM) and GSM8K, a popular grade school-level benchmark. Using the symbolic solver SymPy, we transform word problems into equivalent purely mathematical representations, isolating equation formulation from textual comprehension. Through empirical evaluations, we find that small-scale LLMs struggle significantly more with text interpretation than with equation solving, with accuracy dropping by a factor of 2 to 7 when solving full word problems compared to their math-only counterparts. Exploratory factor analysis confirms a bidimensional structure in LLM reasoning, where models exhibit distinct proficiencies in textual and mathematical components.}
+}
+
+@inproceedings{ghaemi2025memscope,
+  author={Ghaemi, Golsana and Franco, Gabriel and Taram, Kazem and Mancuso, Renato},
+  booktitle={2025 IEEE Real-Time Systems Symposium (RTSS)},
+  title={MEMSCOPE: Open-Source Kernel-Level Framework for Heterogeneous Memory Characterization},
+  year={2025},
+  pages={500-513},
+  abbr={RTSS},
+  doi={10.1109/RTSS66672.2025.00047},
+  code={https://github.com/gaabrielfranco/heterogeneous-memory-benchmarking},
+  bibtex_show={true},
+  keywords={heterogeneous memory; benchmarking; resource management; multi-core real-time systems}
+}
+
+@article{franco2024sparse,
+  title={Sparse Attention Decomposition Applied to Circuit Tracing},
+  author={Franco, Gabriel and Crovella, Mark},
+  journal={arXiv preprint arXiv:2410.00340},
+  year={2024},
+  abbr={arXiv},
+  arxiv={2410.00340},
+  code={https://github.com/gaabrielfranco/sparse-attention-decomposition},
+  bibtex_show={true},
+  abstract={Many papers have shown that attention heads work in conjunction with each other to perform complex tasks. It's frequently assumed that communication between attention heads is via the addition of specific features to token residuals. In this work we seek to isolate and identify the features used to effect communication and coordination among attention heads in GPT-2 small. Our key leverage on the problem is to show that these features are very often sparsely coded in the singular vectors of attention head matrices. We characterize the dimensionality and occurrence of these signals across the attention heads in GPT-2 small when used for the Indirect Object Identification (IOI) task.}
+}
+
+@inproceedings{10.1145/3580305.3599307,
+  author={Franco, Gabriel and Crovella, Mark and Comarela, Giovanni},
+  title={Dependence and Model Selection in LLP: The Problem of Variants},
+  year={2023},
+  isbn={9798400701030},
+  publisher={Association for Computing Machinery},
+  address={New York, NY, USA},
+  booktitle={Proceedings of the 29th ACM SIGKDD Conference on Knowledge Discovery and Data Mining},
+  pages={470--481},
+  numpages={12},
+  location={Long Beach, CA, USA},
+  series={KDD '23},
+  abbr={KDD},
+  html={https://doi.org/10.1145/3580305.3599307},
+  doi={10.1145/3580305.3599307},
+  code={https://github.com/gaabrielfranco/llp-variants-kdd},
+  bibtex_show={true},
+  keywords={weakly supervised learning; learning from label proportions; hyperparameter selection},
+  abstract={The problem of Learning from Label Proportions (LLP) has received considerable research attention and has numerous practical applications. In LLP, a hypothesis assigning labels to items is learned using knowledge of only the proportion of labels found in predefined groups, called bags. While a number of algorithmic approaches to learning in this context have been proposed, very little work has addressed the model selection problem for LLP. We argue that a careful approach to model selection for LLP requires consideration of the dependence structure that exists between bags, items, and labels. In this paper we formalize this structure and show how it affects model selection. We show how this leads to improved methods of model selection that we demonstrate outperform the state of the art over a wide range of datasets and LLP algorithms.}
+}
+
+@article{franco2023evaluating,
+  title={Evaluating LLP Methods: Challenges and Approaches},
+  author={Franco, Gabriel and Comarela, Giovanni and Crovella, Mark},
+  journal={arXiv preprint arXiv:2310.19065},
+  year={2023},
+  abbr={arXiv},
+  arxiv={2310.19065},
+  code={https://github.com/gaabrielfranco/llp-variants-datasets-benchmarks},
+  bibtex_show={true},
+  abstract={Learning from Label Proportions (LLP) is an established machine learning problem with numerous real-world applications. In this setting, data items are grouped into bags, and the goal is to learn individual item labels, knowing only the features of the data and the proportions of labels in each bag. Although LLP is a well-established problem, it has several unusual aspects that create challenges for benchmarking learning methods. To address these challenges, we develop methods capable of generating LLP datasets meeting the requirements of different variants, develop guidelines for benchmarking LLP algorithms, and illustrate the new methods and guidelines by performing an extensive benchmark of a set of well-known LLP algorithms.}
+}
+
+@inproceedings{8923937,
   author={Franco, Gabriel and Henrique Fonseca Ribeiro, Marcos and Comarela, Giovanni},
-  booktitle={2019 8th Brazilian Conference on Intelligent Systems (BRACIS)}, 
-  title={Towards an Interpretable Metric for DOTA 2 Players: An Unsupervised Learning Approach}, 
+  booktitle={2019 8th Brazilian Conference on Intelligent Systems (BRACIS)},
+  title={Towards an Interpretable Metric for DOTA 2 Players: An Unsupervised Learning Approach},
   year={2019},
-  volume={},
-  number={},
   pages={341-346},
-  doi={10.1109/BRACIS.2019.00067}
+  abbr={BRACIS},
+  doi={10.1109/BRACIS.2019.00067},
+  code={https://github.com/gaabrielfranco/new-moba-metric},
+  bibtex_show={true}
 }
 
 @article{gomes2016plasmodium,
@@ -19,97 +146,7 @@
   volume={5},
   number={1},
   pages={63--83},
-  year={2016}
-}
-
-@inproceedings{10.1145/3580305.3599307,
-author = {Franco, Gabriel and Crovella, Mark and Comarela, Giovanni},
-title = {Dependence and Model Selection in LLP: The Problem of Variants},
-year = {2023},
-isbn = {9798400701030},
-publisher = {Association for Computing Machinery},
-address = {New York, NY, USA},
-url = {https://doi.org/10.1145/3580305.3599307},
-doi = {10.1145/3580305.3599307},
-abstract = {The problem of Learning from Label Proportions (LLP) has received considerable research attention and has numerous practical applications. In LLP, a hypothesis assigning labels to items is learned using knowledge of only the proportion of labels found in predefined groups, called bags. While a number of algorithmic approaches to learning in this context have been proposed, very little work has addressed the model selection problem for LLP. Nonetheless, it is not obvious how to extend straightforward model selection approaches to LLP, in part because of the lack of item labels. More fundamentally, we argue that a careful approach to model selection for LLP requires consideration of the dependence structure that exists between bags, items, and labels. In this paper we formalize this structure and show how it affects model selection. We show how this leads to improved methods of model selection that we demonstrate outperform the state of the art over a wide range of datasets and LLP algorithms.},
-booktitle = {Proceedings of the 29th ACM SIGKDD Conference on Knowledge Discovery and Data Mining},
-pages = {470–481},
-numpages = {12},
-keywords = {weakly supervised learning, learning from label proportions, hyperparameter selection},
-location = {Long Beach, CA, USA},
-series = {KDD '23}
-}
-
-@article{franco2023evaluating,
-  title={Evaluating LLP Methods: Challenges and Approaches},
-  author={Franco, Gabriel and Comarela, Giovanni and Crovella, Mark},
-  journal={arXiv preprint arXiv:2310.19065},
-  year={2023}
-}
-
-@article{franco2024sparse,
-  title={Sparse Attention Decomposition Applied to Circuit Tracing},
-  author={Franco, Gabriel and Crovella, Mark},
-  journal={arXiv preprint arXiv:2410.00340},
-  year={2024}
-}
-
-@inproceedings{calais-etal-2025-disentangling,
-    title = "Disentangling Text and Math in Word Problems: Evidence for the Bidimensional Structure of Large Language Models' Reasoning",
-    author = "Calais, Pedro  and
-      Franco, Gabriel  and
-      Tang, Zilu  and
-      Nikas, Themistoklis  and
-      Jr., Wagner Meira  and
-      Terzi, Evimaria  and
-      Crovella, Mark",
-    editor = "Che, Wanxiang  and
-      Nabende, Joyce  and
-      Shutova, Ekaterina  and
-      Pilehvar, Mohammad Taher",
-    booktitle = "Findings of the Association for Computational Linguistics: ACL 2025",
-    month = jul,
-    year = "2025",
-    address = "Vienna, Austria",
-    publisher = "Association for Computational Linguistics",
-    url = "https://aclanthology.org/2025.findings-acl.656/",
-    doi = "10.18653/v1/2025.findings-acl.656",
-    pages = "12671--12688",
-    ISBN = "979-8-89176-256-5",
-    abstract = "Do LLMs process text and mathematics as a unified skill, or do these components rely on distinct underlying mechanisms? We investigate this question by disentangling the textual interpretation and mathematical solving steps in word problems drawn from Brazil{'}s largest college entrance exam (ENEM) and GSM8K, a popular grade school-level benchmark. Using the symbolic solver SymPy, we transform word problems into equivalent purely mathematical representations, isolating equation formulation from textual comprehension. Our extended benchmarks enable a structured analysis of LLM performance across these two dimensions. Through empirical evaluations, we find that small-scale LLMs struggle significantly more with text interpretation than with equation solving, with accuracy dropping by a factor of 2 to 7 when solving full word problems compared to their math-only counterparts. Exploratory factor analysis confirms a bidimensional structure in LLM reasoning, where models exhibit distinct proficiencies in textual and mathematical components, underscoring the need for targeted improvements in language comprehension. By analyzing the latent factors associated with each model, our findings provide a framework for researchers and practitioners to make informed choices when selecting models based on computational costs and the nature of their tasks."
-}
-
-@INPROCEEDINGS{11315093,
-    author={Ghaemi, Golsana and Franco, Gabriel and Taram, Kazem and Mancuso, Renato},
-    booktitle={2025 IEEE Real-Time Systems Symposium (RTSS)}, 
-    title={MEMSCOPE: Open-Source Kernel-Level Framework for Heterogeneous Memory Characterization}, 
-    year={2025},
-    volume={},
-    number={},
-    pages={500-513},
-    keywords={Memory management;Noise;Random access memory;Memory modules;Interference;Benchmark testing;Real-time systems;Maintenance;Resource management;Stress;heterogeneous memory;benchmarking;resource management;multi-core real-time systems},
-    doi={10.1109/RTSS66672.2025.00047}
-}
-
-@article{franco2026singular,
-  title={Singular Vectors of Attention Heads Align with Features},
-  author={Franco, Gabriel and Loughridge, Carson and Crovella, Mark},
-  journal={arXiv preprint arXiv:2602.13524},
-  year={2026}
-}
-
-@article{franco2026finding,
-  title={Finding Highly Interpretable Prompt-Specific Circuits in Language Models},
-  author={Franco, Gabriel and Tassis, Lucas M and Rohr, Azalea and Crovella, Mark},
-  journal={arXiv preprint arXiv:2602.13483},
-  year={2026}
-}
-
-@inproceedings{
-franco2025pinpointing,
-title={Pinpointing Attention-Causal Communication in Language Models},
-author={Gabriel Franco and Mark Crovella},
-booktitle={The Thirty-ninth Annual Conference on Neural Information Processing Systems},
-year={2025},
-url={https://openreview.net/forum?id=wUoK24u4x7}
+  year={2016},
+  abbr={Abakós},
+  bibtex_show={true}
 }

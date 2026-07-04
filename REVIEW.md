@@ -20,3 +20,17 @@ Site overhaul (July 2026), branch `site-overhaul`. Log of all changes, grouped b
   - `enable_publication_thumbnails: false` (per owner decision — no per-paper thumbnails).
   - Removed `jekyll_get_json`/`jsonresume` blocks (resume.json deleted; CV will be driven by `_data/cv.yml`).
 - Verified: `_site` no longer contains CODEX.md/REVIEW.md/requirements.txt or any Einstein/Godfather/lorem demo pages; sitemap has no project/book demo URLs. Remaining "Empty slug" build warnings traced to jekyll-scholar on publications.md — to be resolved with the Phase C bibliography rewrite.
+
+## Phase C — Publications enrichment
+
+- Added missing paper to `_bibliography/papers.bib`: **"Do Language Models Track Entities Across State Changes?"** (Tang, Zhao, Franco, Wijaya, Mueller, Schuster, Kim), **ICML 2026** (arXiv:2605.30233; confirmed "ICML main conference 2026" via arXiv comments).
+- Corrected **"Singular Vectors of Attention Heads Align with Features"** from arXiv-only to **ICML 2026** (confirmed by author's own repo description "to appear in ICML 2026").
+- Updated **"Finding Interpretable Prompt-Specific Circuits in Language Models"** title to match arXiv v2 (was "Finding Highly Interpretable…"); kept as arXiv preprint (under review at NeurIPS per owner).
+- Fixed author lists to arXiv order (e.g. Franco, Tassis, Rohr, Crovella for 13483).
+- Enriched **every** entry with al-folio fields: `abbr` (venue badge: NeurIPS/ICML/ACL Findings/KDD/RTSS/BRACIS/arXiv/Abakós), `bibtex_show={true}` (BibTeX popover), `arxiv=` (5 entries), `html=`/`doi=` (OpenReview for NeurIPS, ACL Anthology, ACM DL), `code=` GitHub links (8 entries, matched from the author's public repos), and `abstract=` (from arXiv/ACL, verbatim).
+- Marked the 4 interpretability papers `selected={true}` (owner's choice): ICML'26 Entity Tracking, ICML'26 Singular Vectors, arXiv Prompt-Specific Circuits, NeurIPS'25 Pinpointing.
+- `_pages/about.md`: `selected_papers: true` (homepage now shows the 4 selected papers).
+- `_data/coauthors.yml`: added verified homepage links for Terzi, Kim, Mueller, Tang (co-author names now link on the publications page). Other co-authors left unlinked pending verified URLs.
+- New news items: `_news/icml26_entity_tracking.md`, `_news/icml26_singular_vectors.md`. **NOTE: dates set to 2026-05-01 as an estimated ICML notification date — Gabriel to confirm/adjust.**
+- Config: kept `enable_publication_thumbnails: true` because the venue badge shares that column; no `preview` fields defined, so badges render with **no** thumbnail images (exactly the requested look).
+- Verified: 11 venue badges render, 0 thumbnail images; Abs/Bib/HTML/Code/arXiv buttons render per entry; homepage selected-papers section shows the 4 chosen papers; "Empty slug" warnings gone.
