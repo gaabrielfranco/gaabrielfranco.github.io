@@ -2,23 +2,14 @@
 layout: page
 title: Feature Geometry in Attention Heads
 description: When and why the singular vectors of attention matrices align with the features a model uses.
-img: assets/img/posts/acc/fig1-distribution-merged.png
+img: assets/img/projects/svf-geometry.png
 importance: 2
 category: interpretability
 related_publications: true
 ---
 
-Identifying feature representations is a central task in mechanistic interpretability. Several studies
-have observed that feature representations can sometimes be inferred from the singular vectors of
-attention matrices — but sound justification for this phenomenon was lacking.
+Several studies have noticed that you can often read a model's features off the singular vectors of its attention matrices, but it was not clear why this happens. In this ICML 2026 paper, we give an answer {% cite franco2026singular %}. We first show that singular vectors reliably align with features in a setting where the features can be observed directly, and then prove that this alignment is expected under a range of conditions. We also identify sparse attention decomposition as a testable signature of the alignment and find it in real models.
 
-This work asks: *why and when do singular vectors align with features?* We first demonstrate that
-singular vectors robustly align with features in a model where features can be directly observed, and
-then show theoretically that such alignment is expected under a range of conditions
-{% cite franco2026singular %}. Operationally, we identify **sparse attention decomposition** as a
-testable prediction of this alignment, and show that it emerges in real models such as GPT-2 small
-when tracing the circuits used for the indirect object identification (IOI) task
-{% cite franco2024sparse %}.
+{% include figure.liquid loading="eager" path="assets/img/projects/svf-cosine-alignment.png" class="img-fluid rounded z-depth-1" zoomable=true caption="In a controlled setting, the singular vectors of an attention head come to align with the model's features over the course of training." %}
 
-Code is available at [svf-alignment](https://github.com/gaabrielfranco/svf-alignment) and
-[sparse-attention-decomposition](https://github.com/gaabrielfranco/sparse-attention-decomposition).
+Code is available at [svf-alignment](https://github.com/gaabrielfranco/svf-alignment).

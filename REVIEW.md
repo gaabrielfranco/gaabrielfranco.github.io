@@ -110,3 +110,15 @@ Site overhaul (July 2026), branch `site-overhaul`. Log of all changes, grouped b
 - **Personal page**: the scaffold's example `{% include figure %}` executed inside an HTML comment (Liquid ignores HTML comments) and leaked broken markup. Rewrote without live Liquid; the photo example is now inside a `{% raw %}` code block.
 - **Repositories page removed** (Gabriel's choice): the al-folio repo cards depend on `github-readme-stats.vercel.app`, which returns 503 when rate-limited (confirmed down). Since the projects page already links every repo, deleted `_pages/repositories.md` and orphaned `_data/repositories.yml`.
 - Nav is now: about / blog / publications / projects / cv / teaching & service / personal.
+
+## Phase L — Projects rework + talks in news
+
+- **Projects reorganized** and rewritten in Gabriel's voice (no em-dashes, no marketing tone):
+  - Project 1 renamed to **"Understanding why an attention head attends where it does"** and now spans the full ACC line of three papers: Sparse Attention Decomposition (the first version), Pinpointing ACC (NeurIPS 2025), and ACC++ (Finding Interpretable Prompt-Specific Circuits). Cites render distinctly (Franco & Crovella 2024, 2025; Franco et al. 2026).
+  - Project 2 (**Feature Geometry in Attention Heads**) now cites only the ICML 2026 Singular Vectors paper (Sparse Attention Decomposition moved to Project 1). New thumbnail from Gabriel's SVF figures (`assets/img/projects/svf-geometry.png`, the geometric-intuition poster) instead of the ACC++ figure; added the SV/feature cosine-alignment plot in the body.
+  - Project 3 (**Learning from Label Proportions**): disambiguated the two "Franco et al., 2023" citations by naming each venue in the prose ("our KDD 2023 paper" vs "a companion paper"). Note: literal "2023a/2023b" isn't emitted by jekyll-scholar (it doesn't run citeproc year-suffix disambiguation), and forcing it via the `year` field would break the publications page's year grouping — so prose disambiguation is used instead.
+  - New project images live in `assets/img/projects/` (copied from Gabriel's `_papers` figures).
+- **Talks added to news** (from the CV's Invited Talks section), in Gabriel's voice, grouping the talk given at two venues into one item:
+  - `talk_ufv_2026.md` (UFV, 2026-04-04), `talk_attention_first_principles.md` (Brown + BU TINLab, 2026-03-12), `talk_acc_baaigl_2025.md` (BU BAAIGL Lab, 2025-09-24).
+  - Each has a `TODO(Gabriel)` comment for attaching slides once available.
+- Verified: build clean; all three project pages render with correct citations/figures; three talk items appear in news.

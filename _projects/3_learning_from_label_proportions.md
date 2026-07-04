@@ -1,24 +1,14 @@
 ---
 layout: page
 title: Learning from Label Proportions
-description: Model selection, dependence structure, and benchmarking for weakly supervised learning from bag-level label proportions.
+description: Model selection and benchmarking for a weakly supervised setting where only bag-level label proportions are known.
 importance: 3
 category: weakly supervised learning
 related_publications: true
 ---
 
-In Learning from Label Proportions (LLP), a model that assigns labels to individual items is learned
-using knowledge of only the *proportion* of labels within predefined groups, called bags. Despite its
-many applications, LLP has several unusual aspects that complicate both learning and evaluation.
+Learning from Label Proportions (LLP) is a weakly supervised problem: you only know the proportion of labels within each group of items (a bag), and you want to recover the labels of the individual items.
 
-This work argues that a careful approach to model selection for LLP requires consideration of the
-dependence structure that exists between bags, items, and labels. We formalize this structure, show how
-it affects model selection, and derive improved methods that outperform the state of the art across a
-wide range of datasets and LLP algorithms {% cite 10.1145/3580305.3599307 %}. Building on this, we
-develop methods to generate variant-specific datasets, propose guidelines for benchmarking LLP
-algorithms, and run an extensive benchmark showing that the best algorithm depends critically on the
-LLP variant and the model selection method {% cite franco2023evaluating %}.
+In our KDD 2023 paper, we show that the dependence structure between bags, items, and labels defines distinct LLP variants, and that accounting for it leads to better model selection across a wide range of datasets and algorithms {% cite 10.1145/3580305.3599307 %}. In a companion paper, we build on this to generate variant-specific datasets and propose guidelines for benchmarking LLP methods fairly, and use them to run an extensive benchmark of well-known algorithms {% cite franco2023evaluating %}.
 
-Code and datasets are available at
-[llp-variants-kdd](https://github.com/gaabrielfranco/llp-variants-kdd) and
-[llp-variants-datasets-benchmarks](https://github.com/gaabrielfranco/llp-variants-datasets-benchmarks).
+Code and datasets are available at [llp-variants-kdd](https://github.com/gaabrielfranco/llp-variants-kdd) and [llp-variants-datasets-benchmarks](https://github.com/gaabrielfranco/llp-variants-datasets-benchmarks).

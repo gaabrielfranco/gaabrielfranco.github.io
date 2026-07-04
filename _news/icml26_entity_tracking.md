@@ -6,7 +6,7 @@ inline: false
 related_posts: false
 ---
 
-Led by [Zilu Tang](https://pootiet.github.io/), this work asks whether language models really keep track of the state of the world as it changes. It turns out they don't track states incrementally; instead, they aggregate the relevant information in parallel at the last token, once the query becomes clear. I was glad to contribute to the mechanistic analysis.
+Led by [Zilu Tang](https://pootiet.github.io/), this work asks whether language models really keep track of the state of the world as it changes. It turns out they don't track states incrementally; instead, they aggregate the relevant information in parallel at the last token, once the query becomes clear.
 
 - [Paper](https://arxiv.org/abs/2605.30233)
 - [Code](https://github.com/PootieT/entity-tracking-mi)
