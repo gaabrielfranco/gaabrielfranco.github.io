@@ -7,26 +7,6 @@ nav: true
 nav_order: 7
 ---
 
-<!--
-  TODO(Gabriel): this is a scaffold — replace the placeholder text with your own,
-  and drop photos into assets/img/personal/ (any size; the site auto-generates
-  responsive versions). To add a single image, use:
-
-  {% include figure.liquid loading="eager" path="assets/img/personal/bread.jpg" class="img-fluid rounded z-depth-1" zoomable=true caption="Sourdough, take 37." %}
-
-  To add a row of images (a small gallery), copy this block and point each figure
-  at a real file:
-
-  <div class="row justify-content-sm-center">
-    <div class="col-sm-6 mt-3 mt-md-0">
-      {% include figure.liquid path="assets/img/personal/photo1.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
-    </div>
-    <div class="col-sm-6 mt-3 mt-md-0">
-      {% include figure.liquid path="assets/img/personal/photo2.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
-    </div>
-  </div>
--->
-
 Beyond research, here are a few things I spend my time on.
 
 ## Music
@@ -35,7 +15,7 @@ Beyond research, here are a few things I spend my time on.
 
 ## Baking
 
-*A line about your bread/baking hobby. Add a photo or two of recent bakes using the gallery block in the page source.*
+*A line about your bread / baking hobby. Add a photo or two of recent bakes (see the note at the bottom of this page).*
 
 ## Gym & movement
 
@@ -44,3 +24,13 @@ Beyond research, here are a few things I spend my time on.
 ## Other things
 
 *Anything else you enjoy: travel, games, cooking, photography, etc.*
+
+---
+
+*Adding photos: drop image files into `assets/img/personal/` and, where you want one to appear, add a line like the one below (the site auto-generates responsive versions). For a row of images, place several `figure` includes inside a `<div class="row">`.*
+
+{% raw %}
+```liquid
+{% include figure.liquid loading="eager" path="assets/img/personal/bread.jpg" class="img-fluid rounded z-depth-1" zoomable=true caption="Sourdough, take 37." %}
+```
+{% endraw %}

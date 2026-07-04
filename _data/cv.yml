@@ -6,63 +6,40 @@
     - name: Email
       value: gvfranco@bu.edu
     - name: Research Areas
-      value: Mechanistic Interpretability, Natural Language Processing, Causal Analysis, Concept Representations and Geometry, LLM Evaluation, Learning from Label Proportions, Machine Learning / Deep Learning
+      value: "Mechanistic Interpretability, NLP, Causal Analysis, Concept Representations and Geometry, LLM Evaluation, Machine Learning / Deep Learning"
 
 - title: Education
   type: time_table
   contents:
     - title: Ph.D. in Computer Science
       institution: Boston University, Boston, MA
-      year: 2021 - Present
+      year: 2021 – now
       description:
-        - Advisor: Prof. Mark Crovella
-        - "Research interests: Mechanistic Interpretability, NLP, Causal Analysis, Concept Representations and Geometry, LLM Evaluation, Learning from Label Proportions"
+        - "Advisor: Prof. Mark Crovella"
     - title: M.Sc. in Computer Science
       institution: Federal University of Viçosa, Brazil
-      year: 2018 - 2021
+      year: 2018 – 2021
       description:
-        - Advisor: Prof. Giovanni Comarela
+        - "Advisor: Prof. Giovanni Comarela"
         - "Thesis: New Hyperparameter Strategies for Learning with Label Proportions"
     - title: B.S. in Computer Science
       institution: Federal University of Viçosa, Brazil
-      year: 2014 - 2018
+      year: 2014 – 2018
 
 - title: Research & Industry Experience
   type: time_table
   contents:
     - title: Research Assistant
       institution: Boston University, Boston, MA
-      year: 2021 - Present
+      year: 2021 – now
       description:
-        - "Towards understanding internal communication mechanisms in Large Language Models (LLMs): developed a novel spectral decomposition method to identify causal communication circuits in LLMs, enabling new applications in circuit tracing and low-rank model interventions."
-        - "Hyperparameter selection and new datasets for Learning from Label Proportions (LLP): proposed that LLP problems can be characterized into distinct variants, showing that different hyperparameter selection strategies are needed for each, and proposing a new set of benchmark datasets to account for these variants."
+        - "Mechanistic interpretability of LLMs: developed spectral decomposition methods to identify causal communication circuits in attention, enabling circuit tracing and low-rank model interventions."
+        - "Learning from Label Proportions (LLP): characterized LLP into distinct variants and proposed benchmark datasets and model-selection strategies for each."
     - title: Data Scientist Intern
       institution: Microsoft, Redmond, WA
-      year: May 2024 - Aug 2024
+      year: Summer 2024
       description:
-        - "Fine-tuned and optimized multi-modal SLMs for local image tagging, achieving ~85% of a large foundation model's performance while meeting < 5s inference targets."
-    - title: Data Scientist
-      institution: SEEK, Brazil (Remote)
-      year: 2020 - 2021
-      description:
-        - "Optimized a large-scale recommender system, reducing average response time by over 50% to support scalability for a growing user base."
-        - "Designed and A/B tested a new job recommendation model, increasing click-through rate by 5% and job applications by 10%."
-    - title: Data Scientist
-      institution: Localiza, Brazil (Remote)
-      year: Jul 2020 - Sep 2020
-      description:
-        - "Developed and validated a machine learning model to identify reliable customers; presented feasibility analysis and results to stakeholders to inform business decision-making."
-    - title: Master's Student Researcher
-      institution: CAPES (Brazilian Government Research Funding Agency), Brazil
-      year: 2018 - 2020
-      description:
-        - "New Hyperparameter Strategies for Learning with Label Proportions (LLP): improved the cross-validation strategies for LLP, a problem in which instances do not have individual labels."
-    - title: Undergraduate Student Researcher
-      institution: CNPq / FAPEMIG (Brazilian Government Research Funding Agencies), Brazil
-      year: 2015 - 2018
-      description:
-        - "Developed Bio-ORACLE, software written in Java that uses data mining techniques to help decision-making in bioethics (Laboratory of Epidemiological and Computational Methods in Health, UFV)."
-        - "Implemented malaria and plasmodium models in Autosimmune, a multi-agent human immune system simulator written in Java (Laboratory of Epidemiological and Computational Methods in Health, UFV)."
+        - "Fine-tuned and optimized multi-modal small language models for local image tagging, reaching about 85% of a large foundation model's performance under a sub-5s inference target."
 
 - title: Selected Honors & Awards
   type: time_table
@@ -70,16 +47,9 @@
     - year: 2025
       items:
         - NeurIPS 2025 Scholar Award
-    - year: 2023
+    - year: 2022 – 23
       items:
-        - KDD '23 Student Travel Award
-    - year: 2022
-      items:
-        - KDD '22 Student Travel Award
-    - year: 2015 - 2018
-      items:
-        - CNPq Research Scholarships (PIBIC/CNPq) — 2015, 2017, 2018
-        - FAPEMIG Research Scholarship (PIBIC/FAPEMIG) — 2015
+        - KDD Student Travel Awards (2022, 2023)
 
 - title: Academic Service
   type: nested_list
@@ -91,44 +61,12 @@
         - NeurIPS 2025
         - ICLR 2025
 
-- title: Teaching Experience
+- title: Teaching
   type: time_table
   contents:
-    - title: Teaching Assistant — CAS CS 132 (Geometric Algorithms)
-      institution: Boston University, Boston, MA
+    - title: "Teaching Assistant — CAS CS 132 (Geometric Algorithms)"
+      institution: Boston University
       year: Spring 2025
-    - title: Teaching Assistant — CDS DS 701 (Tools for Data Science)
-      institution: Boston University, Boston, MA
+    - title: "Teaching Assistant — CDS DS 701 (Tools for Data Science)"
+      institution: Boston University
       year: Fall 2023
-    - title: Instructor — LaTeX short course
-      institution: Federal University of Viçosa, Brazil
-      year: 2019
-    - title: Teaching Assistant — INF 100 (Introduction to Programming I)
-      institution: Federal University of Viçosa, Brazil
-      year: 2019
-
-- title: Other Academic Productions
-  type: list
-  contents:
-    - "Siqueira-Batista, Rodrigo, et al. <em>Parasitologia: Fundamentos e Prática Clínica</em>. Guanabara, 2020. ISBN 9788527735735. (Co-wrote Chapter 4 on the computational approach to the study of parasitic diseases.)"
-    - "Comarela, G.; Franco, G.; Trois, C.; Liberato, A.; Martinello, M.; Corrêa, J. H.; Villaça, R. <em>Introdução à Ciência de Dados: Uma Visão Pragmática utilizando Python, Aplicações e Oportunidades em Redes de Computadores</em>. SBRC 2019 (Short Course)."
-
-- title: Technical Skills
-  type: nested_list
-  contents:
-    - title: Languages
-      items:
-        - Python, C/C++, Java
-    - title: ML / DS Libraries
-      items:
-        - PyTorch, Transformers, PEFT, TransformerLens, nnsight, Scikit-learn, Pandas, NumPy, Matplotlib, Seaborn
-    - title: Other Tools
-      items:
-        - Git, Linux, SQL, Redis, ElasticSearch
-
-- title: Languages
-  type: list
-  contents:
-    - "<u>Portuguese:</u> Native or bilingual proficiency"
-    - "<u>English:</u> Professional working proficiency"
-    - "<u>Spanish:</u> Elementary proficiency"
