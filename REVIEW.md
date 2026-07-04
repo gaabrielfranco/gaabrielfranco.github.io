@@ -42,3 +42,15 @@ Site overhaul (July 2026), branch `site-overhaul`. Log of all changes, grouped b
 - Rewrote `_data/cv.yml` with Gabriel's real CV, transcribed from `assets/pdf/CV.pdf` and updated with verified 2026 facts: Education, Research & Industry Experience (BU RA, Microsoft intern, SEEK, Localiza, CAPES, CNPq/FAPEMIG), Selected Honors & Awards, Academic Service (ICLR 2026/2025, NeurIPS 2025 + MI Workshop), Teaching, Other Academic Productions (book chapter + SBRC short course), Technical Skills, Languages.
 - Note: the demo `assets/json/resume.json` was already removed in Phase B, so the layout uses `_data/cv.yml` as the single source. The shipped `CV.pdf` is still the Nov 2025 export — **Gabriel to provide an updated PDF** (user-side checklist).
 - Verified: CV page renders all 9 sections from real data, PDF button links to `/assets/pdf/CV.pdf`, sidebar TOC present, no Einstein/Zurich/Nobel leftovers.
+
+## Phase E — Projects, Repositories, Bookshelf
+
+- **Projects**: un-excluded `_pages/projects.md`; changed it to a flat research portfolio (removed the demo `work`/`fun` categories, real description). Created 3 real project pages, each drafted from the papers' own wording with `related_publications: true` (auto-generated References section from `{% cite %}`) and links to the code repos:
+  - `_projects/1_attention_causal_communication.md` — ACC / ACC++ circuit tracing (cites Pinpointing, Finding; links `accpp-tracer`).
+  - `_projects/2_feature_geometry.md` — singular-vector/feature alignment (cites Singular Vectors, Sparse Attention; links `svf-alignment`).
+  - `_projects/3_learning_from_label_proportions.md` — LLP model selection & benchmarks (cites KDD'23, Evaluating LLP).
+  - Card thumbnails reuse Gabriel's own paper figures (`assets/img/posts/acc/fig3`, `fig1`). **Gabriel to review card text and swap images if desired.**
+- **Repositories**: un-excluded `_pages/repositories.md`; extended `_data/repositories.yml` from 2 to 6 repos (added `accpp-tracer`, `pinpointing-attention-causal-communication`, `svf-alignment`, `llp-variants-datasets-benchmarks`). GitHub stat/trophy cards are fetched client-side on the live site.
+- **Bookshelf**: still excluded (`_pages/books.md` in `exclude:`, nav hidden) until Gabriel provides a real book list — the demo "Godfather" book was already removed in Phase B.
+- Nav bar is now: about, blog, publications, projects, repositories, cv, teaching & service.
+- Verified: 3 project cards render (flat, no demo categories); each detail page shows a References section with its cited papers; repositories page builds with 6 repo cards + user/trophy widgets.

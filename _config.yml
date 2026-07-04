@@ -200,8 +200,6 @@ exclude:
   - REVIEW.md
   - requirements.txt
   - _pages/books.md # temporarily excluded until real book list is added
-  - _pages/projects.md
-  - _pages/repositories.md
 keep_files:
   - CNAME
   - .nojekyll
