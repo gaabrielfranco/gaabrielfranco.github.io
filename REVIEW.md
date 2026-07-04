@@ -101,3 +101,12 @@ Site overhaul (July 2026), branch `site-overhaul`. Log of all changes, grouped b
 - **ICML news dates** corrected to **2026-04-30** (ICML 2026 author-notification date; conference is Jul 7–9, 2026).
 - **Bookshelf → personal page**: removed `_pages/books.md` (per Gabriel, a bookshelf isn't the right fit); created `_pages/personal.md` (nav order 7, after teaching) as a scaffold for non-research interests (music, baking, gym, hobbies) with commented photo/gallery examples and `assets/img/personal/` as the image home. Content is placeholder for Gabriel to fill.
 - Verified: full build clean; nav is about / blog / publications / projects / repositories / cv / teaching & service / personal.
+
+## Phase K — News polish, CV/personal bug fixes, repositories removed
+
+- **papers.bib**: removed the outdated `code` link from MEMSCOPE (RTSS); added `code` for the entity-tracking paper (`github.com/PootieT/entity-tracking-mi`).
+- **News**: rewrote all items to be friendlier (a sentence or two on each work), highlighting the lead author when Gabriel is not first author (Zilu Tang → entity tracking, linked; Pedro Calais → ACL; Golsana Ghaemi → RTSS, bolded — no unverified homepage links). Added code links where public. Added a new **RTSS 2025** news item. Oldest news remains "started my PhD" (2021), per Gabriel.
+- **CV (`_data/cv.yml`)**: fixed the `{"Advisor"=>...}` bug (YAML was parsing `- Advisor: X` and colon-containing bullets as maps → now quoted strings). Trimmed to a short, PhD-onward, research-focused CV (Education, Research & Industry Experience [BU RA + Microsoft intern], Selected Honors & Awards, Academic Service, Teaching); dropped pre-PhD industry, academic productions, skills, and languages (all still in the full PDF). Used compact date labels (e.g. "Summer 2024", "2021 – now") so the year column no longer overlaps the description.
+- **Personal page**: the scaffold's example `{% include figure %}` executed inside an HTML comment (Liquid ignores HTML comments) and leaked broken markup. Rewrote without live Liquid; the photo example is now inside a `{% raw %}` code block.
+- **Repositories page removed** (Gabriel's choice): the al-folio repo cards depend on `github-readme-stats.vercel.app`, which returns 503 when rate-limited (confirmed down). Since the projects page already links every repo, deleted `_pages/repositories.md` and orphaned `_data/repositories.yml`.
+- Nav is now: about / blog / publications / projects / cv / teaching & service / personal.
