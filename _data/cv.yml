@@ -5,8 +5,8 @@
       value: Gabriel Franco
     - name: Email
       value: gvfranco@bu.edu
-    - name: Research Areas
-      value: "Mechanistic Interpretability, NLP, Causal Analysis, Concept Representations and Geometry, LLM Evaluation, Machine Learning / Deep Learning"
+    - name: Research Interests
+      value: "Mechanistic interpretability, representation geometry, feature alignment, and causal circuit discovery. Previous work includes LLM evaluation and learning from label proportions."
 
 - title: Education
   type: time_table
@@ -16,6 +16,7 @@
       year: 2021 – now
       description:
         - "Advisor: Prof. Mark Crovella"
+        - "Expected graduation: December 2026"
     - title: M.Sc. in Computer Science
       institution: Federal University of Viçosa, Brazil
       year: 2018 – 2021
@@ -56,6 +57,9 @@
   contents:
     - title: Reviewer
       items:
+        - COLM 2026
+        - ICML 2026 (recognized as Gold Reviewer)
+        - ACL ARR 2026 (January)
         - ICLR 2026
         - Mechanistic Interpretability Workshop at NeurIPS 2025
         - NeurIPS 2025
