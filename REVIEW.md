@@ -54,3 +54,18 @@ Site overhaul (July 2026), branch `site-overhaul`. Log of all changes, grouped b
 - **Bookshelf**: still excluded (`_pages/books.md` in `exclude:`, nav hidden) until Gabriel provides a real book list — the demo "Godfather" book was already removed in Phase B.
 - Nav bar is now: about, blog, publications, projects, repositories, cv, teaching & service.
 - Verified: 3 project cards render (flat, no demo categories); each detail page shows a References section with its cited papers; repositories page builds with 6 repo cards + user/trophy widgets.
+
+## Phase F — SEO, analytics, socials
+
+- `_config.yml`: `serve_og_meta: true` and `serve_schema_org: true` (Open Graph + schema.org now emitted in `<head>`); set site-wide `og_image` to `.../assets/img/og_image.png`.
+- Rewrote `description` to a real, keyword-rich sentence (used as the meta description + schema.org description).
+- Analytics/verification: left `google_analytics` and `google_site_verification` empty with `TODO(Gabriel)` inline notes (paste ID/token, then flip the matching `enable_*` flag). Not enabled with empty values to avoid emitting broken tags.
+- Created **`assets/img/og_image.png`** (1200×630): dark card with name, "Ph.D. Candidate, Computer Science / Boston University", research tagline, and a circular crop of the profile photo. Generated with PIL (script in scratchpad; not committed).
+- `_data/socials.yml`: added `dblp_url: https://dblp.org/pid/255/9604`; un-hid `rss_icon: true` (feed is active); left `orcid_id: 0000-0003-0702-0146` commented with a `TODO(Gabriel)` to confirm ownership before enabling.
+- Verified: homepage `<head>` emits og:title/url/description/image, twitter:card/image, and two JSON-LD blocks (`@type: Person`, `@type: WebSite`); DBLP + RSS icons render in the socials row; meta description is the new text.
+
+### Still requires Gabriel (user-side)
+- GA4 measurement ID (create property → paste into `google_analytics`, set `enable_google_analytics: true`).
+- Search Console verification token (add property → paste into `google_site_verification`, set `enable_google_verification: true`); submit `sitemap.xml` after deploy.
+- Confirm ORCID `0000-0003-0702-0146`, then uncomment in `socials.yml`.
+- giscus `category_id` is still empty in `_config.yml` (blog comments won't post until set) — grab it from giscus.app.
