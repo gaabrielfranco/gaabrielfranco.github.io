@@ -10,3 +10,7 @@ When an attention head attends from one token to another, what actually caused i
 
 - [Paper](https://openreview.net/forum?id=wUoK24u4x7)
 - [Code](https://github.com/gaabrielfranco/pinpointing-attention-causal-communication)
+
+Here is a short thread about the work:
+
+<blockquote class="twitter-tweet"><a href="https://twitter.com/gvsfranco/status/1985471783869276455">View the thread on X</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

@@ -6,7 +6,11 @@ inline: false
 related_posts: false
 ---
 
-Why can you often read a model's features straight off the singular vectors of its attention matrices? In this paper we give an answer — both empirical and theoretical — showing when and why this alignment happens, and how to recognize it in real models.
+In this paper, we study why the singular vectors of attention matrices so often align with the features a model uses. We give both empirical and theoretical evidence for when this alignment happens, and we show how to recognize it in real models.
 
 - [Paper](https://arxiv.org/abs/2602.13524)
 - [Code](https://github.com/gaabrielfranco/svf-alignment)
+
+Here is a short thread about the work:
+
+<blockquote class="twitter-tweet"><a href="https://twitter.com/gvsfranco/status/2060085476246126597">View the thread on X</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
