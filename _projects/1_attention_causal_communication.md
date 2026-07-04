@@ -1,8 +1,8 @@
 ---
 layout: page
-title: Understanding why an attention head attends where it does
+title: Why attention heads attend where they do
 description: Isolating the low-dimensional signals that cause attention, and using them to trace interpretable circuits from a single forward pass.
-img: assets/img/posts/acc/fig3-graph-merged.png
+img: assets/img/projects/acc-upstream-components.png
 importance: 1
 category: interpretability
 related_publications: true

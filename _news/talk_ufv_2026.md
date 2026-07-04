@@ -8,4 +8,4 @@ related_posts: false
 
 I gave a talk titled "Understanding What Happens Inside LLMs: Mechanistic Interpretability and How Attention Works" at Universidade Federal de Viçosa, where I did my BSc and MSc. It was really nice to come back and share this line of work with the department.
 
-<!-- TODO(Gabriel): add slides once ready, e.g.  - [Slides](/assets/pdf/talks/ufv-2026.pdf) -->
+- [Slides](/assets/pdf/talks/mech-interp-attention.pdf)

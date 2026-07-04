@@ -122,3 +122,10 @@ Site overhaul (July 2026), branch `site-overhaul`. Log of all changes, grouped b
   - `talk_ufv_2026.md` (UFV, 2026-04-04), `talk_attention_first_principles.md` (Brown + BU TINLab, 2026-03-12), `talk_acc_baaigl_2025.md` (BU BAAIGL Lab, 2025-09-24).
   - Each has a `TODO(Gabriel)` comment for attaching slides once available.
 - Verified: build clean; all three project pages render with correct citations/figures; three talk items appear in news.
+
+## Phase M — Project titles/thumbnails + talk slides
+
+- Shortened Project 1 title to **"Why attention heads attend where they do"**.
+- New project thumbnails from Gabriel's figures (`assets/img/projects/`): ACC card → `acc-upstream-components.png` (clean ACC++ edge diagram); LLP card → `llp-bags.png` (full-bag vs split-bag scatter). Feature Geometry keeps `svf-geometry.png`. All three cards now have images.
+- Attached talk slides (`assets/pdf/talks/`): UFV talk → `mech-interp-attention.pdf`; Brown/TINLab talk → `attention-first-principles.pdf`, linked as "Slides" in the two news items. BAAIGL talk intentionally has no slides.
+- Note: the two slide PDFs are ~22 MB each; could be compressed later if download size matters.

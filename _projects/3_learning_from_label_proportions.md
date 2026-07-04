@@ -2,6 +2,7 @@
 layout: page
 title: Learning from Label Proportions
 description: Model selection and benchmarking for a weakly supervised setting where only bag-level label proportions are known.
+img: assets/img/projects/llp-bags.png
 importance: 3
 category: weakly supervised learning
 related_publications: true
