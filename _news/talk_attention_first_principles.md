@@ -6,6 +6,6 @@ inline: false
 related_posts: false
 ---
 
-I gave a talk titled "Understanding Attention from First Principles: From Singular Vectors to Interpretable Causal Circuits" at Brown University and at Boston University's TINLab. It was a great chance to walk through how the geometry of attention connects to the circuits a model uses.
+I gave a talk titled "Understanding Attention from First Principles: From Singular Vectors to Interpretable Causal Circuits" at Brown University and at Boston University's TINLab. It was a great chance to walk through my interpretability research from end-to-end, meet some people at Brown, and get great feedback.
 
 - [Slides](/assets/pdf/talks/attention-first-principles.pdf)
