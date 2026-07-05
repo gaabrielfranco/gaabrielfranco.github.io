@@ -23,9 +23,16 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/publications/";
           },
+        },{id: "nav-projects",
+          title: "projects",
+          description: "Research directions and the code behind them.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/projects/";
+          },
         },{id: "nav-cv",
           title: "cv",
-          description: "Available in PDF.",
+          description: "A full PDF version is also available.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/cv/";
@@ -48,85 +55,87 @@ ninja.data = [{
             window.location.href = "/blog/2026/bias-and-rope-in-attention/";
           
         },
-      },{id: "books-the-godfather",
-          title: 'The Godfather',
-          description: "",
-          section: "Books",handler: () => {
-              window.location.href = "/books/the_godfather/";
-            },},{id: "news-i-just-started-my-phd-in-computer-science-at-boston-university-advised-by-professor-mark-crovella",
+      },{id: "news-i-just-started-my-phd-in-computer-science-at-boston-university-advised-by-professor-mark-crovella",
           title: 'I just started my PhD in Computer Science at Boston University, advised by...',
           description: "",
-          section: "News",},{id: "news-our-paper-quot-dependence-and-model-selection-in-llp-the-problem-of-variants-quot-has-been-accepted-at-kdd-23",
-          title: 'Our paper &amp;quot;Dependence and Model Selection in LLP - The Problem of Variants&amp;quot;...',
+          section: "News",},{id: "news-quot-dependence-and-model-selection-in-llp-the-problem-of-variants-quot-was-accepted-at-kdd-2023",
+          title: '&amp;quot;Dependence and Model Selection in LLP: The Problem of Variants&amp;quot; was accepted at...',
           description: "",
           section: "News",handler: () => {
               window.location.href = "/news/kdd23_paper/";
-            },},{id: "news-we-released-a-new-pre-print-quot-evaluating-llp-methods-challenges-and-approaches-quot",
-          title: 'We released a new pre-print &amp;quot;Evaluating LLP Methods - Challenges and Approaches&amp;quot;',
+            },},{id: "news-new-preprint-quot-evaluating-llp-methods-challenges-and-approaches-quot",
+          title: 'New preprint - &amp;quot;Evaluating LLP Methods: Challenges and Approaches.&amp;quot;',
           description: "",
           section: "News",handler: () => {
               window.location.href = "/news/preprint_llp/";
-            },},{id: "news-we-released-a-new-pre-print-quot-sparse-attention-decomposition-applied-to-circuit-tracing-quot",
-          title: 'We released a new pre-print &amp;quot;Sparse Attention Decomposition Applied to Circuit Tracing&amp;quot;',
+            },},{id: "news-new-preprint-quot-sparse-attention-decomposition-applied-to-circuit-tracing-quot",
+          title: 'New preprint - &amp;quot;Sparse Attention Decomposition Applied to Circuit Tracing.&amp;quot;',
           description: "",
           section: "News",handler: () => {
               window.location.href = "/news/preprint_sparse_attention/";
-            },},{id: "news-our-paper-quot-disentangling-text-and-math-in-word-problems-evidence-for-the-bidimensional-structure-of-large-language-models-reasoning-quot-has-been-accepted-at-findings-of-acl-25",
-          title: 'Our paper &amp;quot;Disentangling Text and Math in Word Problems - Evidence for the...',
+            },},{id: "news-quot-disentangling-text-and-math-in-word-problems-quot-was-accepted-at-findings-of-acl-2025",
+          title: '&amp;quot;Disentangling Text and Math in Word Problems&amp;quot; was accepted at Findings of ACL...',
           description: "",
           section: "News",handler: () => {
               window.location.href = "/news/acl25_findings_paper/";
-            },},{id: "news-our-paper-quot-pinpointing-attention-causal-communication-in-language-models-quot-has-been-accepted-at-neurips-25",
-          title: 'Our paper &amp;quot;Pinpointing Attention-Causal Communication in Language Models&amp;quot; has been accepted at NeurIPS...',
+            },},{id: "news-quot-memscope-open-source-kernel-level-framework-for-heterogeneous-memory-characterization-quot-was-accepted-at-ieee-rtss-2025",
+          title: '&amp;quot;MEMSCOPE: Open-Source Kernel-Level Framework for Heterogeneous Memory Characterization&amp;quot; was accepted at IEEE RTSS...',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/rtss25_paper/";
+            },},{id: "news-invited-talk-at-bu-39-s-baaigl-lab",
+          title: 'Invited talk at BU&amp;#39;s BAAIGL Lab.',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/talk_acc_baaigl_2025/";
+            },},{id: "news-quot-pinpointing-attention-causal-communication-in-language-models-quot-was-accepted-at-neurips-2025",
+          title: '&amp;quot;Pinpointing Attention-Causal Communication in Language Models&amp;quot; was accepted at NeurIPS 2025.',
           description: "",
           section: "News",handler: () => {
               window.location.href = "/news/neurips25_paper/";
-            },},{id: "projects-project-1",
-          title: 'project 1',
-          description: "with background image",
+            },},{id: "news-invited-talks-at-brown-university-and-bu-39-s-tinlab",
+          title: 'Invited talks at Brown University and BU&amp;#39;s TINLab.',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/talk_attention_first_principles/";
+            },},{id: "news-invited-talk-at-universidade-federal-de-viçosa",
+          title: 'Invited talk at Universidade Federal de Viçosa.',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/talk_ufv_2026/";
+            },},{id: "news-quot-do-language-models-track-entities-across-state-changes-quot-was-accepted-at-icml-2026",
+          title: '&amp;quot;Do Language Models Track Entities Across State Changes?&amp;quot; was accepted at ICML 2026....',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/icml26_entity_tracking/";
+            },},{id: "news-quot-singular-vectors-of-attention-heads-align-with-features-quot-was-accepted-at-icml-2026",
+          title: '&amp;quot;Singular Vectors of Attention Heads Align with Features&amp;quot; was accepted at ICML 2026....',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/icml26_singular_vectors/";
+            },},{id: "projects-why-attention-heads-attend-where-they-do",
+          title: 'Why attention heads attend where they do',
+          description: "Isolating the low-dimensional signals that cause attention, and using them to trace interpretable circuits from a single forward pass.",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/1_project/";
-            },},{id: "projects-project-2",
-          title: 'project 2',
-          description: "a project with a background image and giscus comments",
+              window.location.href = "/projects/1_attention_causal_communication/";
+            },},{id: "projects-feature-geometry-in-attention-heads",
+          title: 'Feature Geometry in Attention Heads',
+          description: "When and why the singular vectors of attention matrices align with the features a model uses.",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/2_project/";
-            },},{id: "projects-project-3-with-very-long-name",
-          title: 'project 3 with very long name',
-          description: "a project that redirects to another website",
+              window.location.href = "/projects/2_feature_geometry/";
+            },},{id: "projects-learning-from-label-proportions",
+          title: 'Learning from Label Proportions',
+          description: "Model selection and benchmarking for a weakly supervised setting where only bag-level label proportions are known.",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/3_project/";
-            },},{id: "projects-project-4",
-          title: 'project 4',
-          description: "another without an image",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/4_project/";
-            },},{id: "projects-project-5",
-          title: 'project 5',
-          description: "a project with a background image",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/5_project/";
-            },},{id: "projects-project-6",
-          title: 'project 6',
-          description: "a project with no image",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/6_project/";
-            },},{id: "projects-project-7",
-          title: 'project 7',
-          description: "with background image",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/7_project/";
-            },},{id: "projects-project-8",
-          title: 'project 8',
-          description: "an other project with a background image and giscus comments",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/8_project/";
-            },},{id: "projects-project-9",
-          title: 'project 9',
-          description: "another project with an image 🎉",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/9_project/";
+              window.location.href = "/projects/3_learning_from_label_proportions/";
             },},{
+        id: 'social-dblp',
+        title: 'DBLP',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://dblp.org/pid/255/9604", "_blank");
+        },
+      },{
         id: 'social-email',
         title: 'email',
         section: 'Socials',
@@ -146,6 +155,20 @@ ninja.data = [{
         section: 'Socials',
         handler: () => {
           window.open("https://www.linkedin.com/in/gaabrielfranco", "_blank");
+        },
+      },{
+        id: 'social-orcid',
+        title: 'ORCID',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://orcid.org/0000-0003-0702-0146", "_blank");
+        },
+      },{
+        id: 'social-rss',
+        title: 'RSS Feed',
+        section: 'Socials',
+        handler: () => {
+          window.open("/feed.xml", "_blank");
         },
       },{
         id: 'social-scholar',
