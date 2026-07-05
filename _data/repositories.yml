@@ -1,8 +1,0 @@
-github_users:
-  - gaabrielfranco
-
-repo_description_lines_max: 2
-
-github_repos:
-  - gaabrielfranco/sparse-attention-decomposition
-  - gaabrielfranco/llp-variants-kdd

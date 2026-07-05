@@ -2,96 +2,75 @@
   type: map
   contents:
     - name: Full Name
-      value: Albert Einstein
-    - name: Date of Birth
-      value: 14th March 1879
-    - name: Languages
-      value: English, German
+      value: Gabriel Franco
+    - name: Email
+      value: gvfranco@bu.edu
+    - name: Research Interests
+      value: "Mechanistic interpretability, representation geometry, feature alignment, and causal circuit discovery. Previous work includes LLM evaluation and learning from label proportions."
 
 - title: Education
   type: time_table
   contents:
-    - title: PhD
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1905
+    - title: Ph.D. in Computer Science
+      institution: Boston University, Boston, MA
+      year: 2021 – now
       description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Federal teaching diploma
-      institution: Eidgenössische Technische Hochschule, Zurich, Switzerland
-      year: 1900
+        - "Advisor: Prof. Mark Crovella"
+        - "Expected graduation: December 2026"
+    - title: M.Sc. in Computer Science
+      institution: Federal University of Viçosa, Brazil
+      year: 2018 – 2021
       description:
-        - Description 1.
-        - Description 2.
+        - "Advisor: Prof. Giovanni Comarela"
+        - "Thesis: New Hyperparameter Strategies for Learning with Label Proportions"
+    - title: B.S. in Computer Science
+      institution: Federal University of Viçosa, Brazil
+      year: 2014 – 2018
 
-- title: Experience
+- title: Research & Industry Experience
   type: time_table
   contents:
-    - title: Professor of Theoretical Physics
-      institution: Institute for Advanced Study, Princeton University
-      year: 1933 - 1955
+    - title: Research Assistant
+      institution: Boston University, Boston, MA
+      year: 2021 – now
       description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Visiting Professor
-      institution: California Institute of Technology, Pasadena, California, US
-      year: 1933
+        - "Mechanistic interpretability of LLMs: developed spectral decomposition methods to identify causal communication circuits in attention, enabling circuit tracing and low-rank model interventions."
+        - "Learning from Label Proportions (LLP): characterized LLP into distinct variants and proposed benchmark datasets and model-selection strategies for each."
+    - title: Data Scientist Intern
+      institution: Microsoft, Redmond, WA
+      year: Summer 2024
       description:
-        - Description 1.
-        - Description 2.
+        - "Fine-tuned and optimized multi-modal small language models for local image tagging, reaching about 85% of a large foundation model's performance under a sub-5s inference target."
 
-    - title: Director
-      institution: Kaiser Wilhelm Institute for Physics, Berlin, Germany.
-      year: 1917-1933
-
-    - title: Professor of Theoretical Physics
-      institution: Karl-Ferdinand University, Prague, Czechoslovakia
-      year: 1911 - 1917
-      description:
-
-    - title: Associate Professor of Theoretical Physics
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1909 - 1911
-
-- title: Open Source Projects
+- title: Selected Honors & Awards
   type: time_table
   contents:
-    - title: <a href="https://github.com/alshedivat/al-folio">al-folio</a>
-      year: 2015-now
-      description: A beautiful, simple, clean, and responsive Jekyll theme for academics.
-
-- title: Honors and Awards
-  type: time_table
-  contents:
-    - year: 1921
+    - year: 2025
       items:
-        - Nobel Prize in Physics
-        - Matteucci Medal
-    - year: 2029
+        - NeurIPS 2025 Scholar Award
+    - year: 2022 – 23
       items:
-        - Max Planck Medal
+        - KDD Student Travel Awards (2022, 2023)
 
-- title: Academic Interests
+- title: Academic Service
   type: nested_list
   contents:
-    - title: Topic 1.
+    - title: Reviewer
       items:
-        - Description 1.
-        - Description 2.
-    - title: Topic 2.
-      items:
-        - Description 1.
-        - Description 2.
+        - COLM 2026
+        - ICML 2026 (recognized as Gold Reviewer)
+        - ACL ARR 2026 (January)
+        - ICLR 2026
+        - Mechanistic Interpretability Workshop at NeurIPS 2025
+        - NeurIPS 2025
+        - ICLR 2025
 
-- title: Other Interests
-  type: list
+- title: Teaching
+  type: time_table
   contents:
-    - <u>Hobbies:</u> Hobby 1, Hobby 2, etc.
+    - title: "Teaching Assistant — CAS CS 132 (Geometric Algorithms)"
+      institution: Boston University
+      year: Spring 2025
+    - title: "Teaching Assistant — CDS DS 701 (Tools for Data Science)"
+      institution: Boston University
+      year: Fall 2023

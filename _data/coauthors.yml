@@ -5,3 +5,19 @@
 "Comarela":
   - firstname: ["Giovanni"]
     url: http://www.inf.ufes.br/~gc/
+
+"Terzi":
+  - firstname: ["Evimaria"]
+    url: https://cs-people.bu.edu/evimaria/
+
+"Kim":
+  - firstname: ["Najoung"]
+    url: https://najoung.kim/
+
+"Mueller":
+  - firstname: ["Aaron"]
+    url: https://aaronmueller.github.io/
+
+"Tang":
+  - firstname: ["Zilu"]
+    url: https://pootiet.github.io/
