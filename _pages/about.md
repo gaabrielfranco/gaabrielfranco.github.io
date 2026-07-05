@@ -34,4 +34,3 @@ My primary research focuses on the mechanistic interpretability of large languag
 <!-- TODO(Gabriel): uncomment when the MIT postdoc is public (adjust wording/date as needed).
 Starting in 2027, I will join the Massachusetts Institute of Technology (MIT) as a postdoctoral researcher.
 -->
-

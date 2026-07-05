@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "\"Pinpointing Attention-Causal Communication in Language Models\" was accepted at NeurIPS 2025."
+title: '"Pinpointing Attention-Causal Communication in Language Models" was accepted at NeurIPS 2025.'
 date: 2025-12-02 15:11:00-0400
 inline: false
 related_posts: false

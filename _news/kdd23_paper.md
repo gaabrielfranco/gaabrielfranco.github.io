@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "\"Dependence and Model Selection in LLP: The Problem of Variants\" was accepted at KDD 2023."
+title: '"Dependence and Model Selection in LLP: The Problem of Variants" was accepted at KDD 2023.'
 date: 2023-08-05 15:11:00-0400
 inline: false
 related_posts: false

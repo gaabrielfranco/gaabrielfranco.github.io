@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "\"MEMSCOPE: Open-Source Kernel-Level Framework for Heterogeneous Memory Characterization\" was accepted at IEEE RTSS 2025."
+title: '"MEMSCOPE: Open-Source Kernel-Level Framework for Heterogeneous Memory Characterization" was accepted at IEEE RTSS 2025.'
 date: 2025-07-15 15:11:00-0400
 inline: false
 related_posts: false

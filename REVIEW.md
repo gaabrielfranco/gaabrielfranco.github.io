@@ -65,6 +65,7 @@ Site overhaul (July 2026), branch `site-overhaul`. Log of all changes, grouped b
 - Verified: homepage `<head>` emits og:title/url/description/image, twitter:card/image, and two JSON-LD blocks (`@type: Person`, `@type: WebSite`); DBLP + RSS icons render in the socials row; meta description is the new text.
 
 ### Still requires Gabriel (user-side)
+
 - GA4 measurement ID (create property → paste into `google_analytics`, set `enable_google_analytics: true`).
 - Search Console verification token (add property → paste into `google_site_verification`, set `enable_google_verification: true`); submit `sitemap.xml` after deploy.
 - Confirm ORCID `0000-0003-0702-0146`, then uncomment in `socials.yml`.

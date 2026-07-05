@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "\"Disentangling Text and Math in Word Problems\" was accepted at Findings of ACL 2025."
+title: '"Disentangling Text and Math in Word Problems" was accepted at Findings of ACL 2025.'
 date: 2025-07-05 15:11:00-0400
 inline: false
 related_posts: false

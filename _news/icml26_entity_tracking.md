@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "\"Do Language Models Track Entities Across State Changes?\" was accepted at ICML 2026."
+title: '"Do Language Models Track Entities Across State Changes?" was accepted at ICML 2026.'
 date: 2026-04-30 15:11:00-0400
 inline: false
 related_posts: false
