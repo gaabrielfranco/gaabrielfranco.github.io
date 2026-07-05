@@ -191,7 +191,7 @@ exclude:
   - lighthouse_results/
   - package.json
   - package-lock.json
-  - _pages/about_einstein.md
+  - _pages/personal.md # hidden until the personal page is ready (TODO: Gabriel)
   - purgecss.config.js
   - README.md
   - readme_preview/
