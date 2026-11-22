@@ -191,6 +191,11 @@ exclude:
   - lighthouse_results/
   - package.json
   - package-lock.json
+  # Hide the blog and projects while Gabriel rewrites them.
+  - _pages/blog.md
+  - _pages/projects.md
+  - _posts/
+  - _projects/
   - _pages/personal.md # hidden until the personal page is ready (TODO: Gabriel)
   - purgecss.config.js
   - README.md

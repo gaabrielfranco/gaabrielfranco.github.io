@@ -130,3 +130,8 @@ Site overhaul (July 2026), branch `site-overhaul`. Log of all changes, grouped b
 - New project thumbnails from Gabriel's figures (`assets/img/projects/`): ACC card → `acc-upstream-components.png` (clean ACC++ edge diagram); LLP card → `llp-bags.png` (full-bag vs split-bag scatter). Feature Geometry keeps `svf-geometry.png`. All three cards now have images.
 - Attached talk slides (`assets/pdf/talks/`): UFV talk → `mech-interp-attention.pdf`; Brown/TINLab talk → `attention-first-principles.pdf`, linked as "Slides" in the two news items. BAAIGL talk intentionally has no slides.
 - Note: the two slide PDFs are ~22 MB each; could be compressed later if download size matters.
+
+## Hide the blog and projects during rewrites
+
+- Excluded the blog and project pages and collections in `_config.yml`. Turned off Latest posts in `_pages/about.md` and hid the RSS icon in `_data/socials.yml`.
+- Removed the `CHANGED` rule from `CODEX.md`. Use `git diff` to review individual edits.
