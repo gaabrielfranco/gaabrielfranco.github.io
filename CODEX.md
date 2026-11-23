@@ -11,6 +11,7 @@
 ## Execution Policy
 
 - Prefer minimal, precise edits.
+- Install the locked formatter with `npm ci` and run `npx prettier . --check` before handing off edits.
 - Preserve existing style and structure unless a change is required.
 - If any claim is not clearly supported by the paper or local files, stop and ask.
 - Keep formulas and thresholds exactly aligned with the paper.

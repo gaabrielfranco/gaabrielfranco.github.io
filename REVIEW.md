@@ -135,3 +135,8 @@ Site overhaul (July 2026), branch `site-overhaul`. Log of all changes, grouped b
 
 - Excluded the blog and project pages and collections in `_config.yml`. Turned off Latest posts in `_pages/about.md` and hid the RSS icon in `_data/socials.yml`.
 - Removed the `CHANGED` rule from `CODEX.md`. Use `git diff` to review individual edits.
+
+## Fix deploy and Prettier checks
+
+- Use Ruby 3.3 in the deploy and post-deploy link checks so `ruby/setup-ruby` can select a patch available on the runner.
+- Lock the Prettier and Liquid plugin versions, install them with `npm ci` in CI, and format `_layouts/bib.liquid`.
