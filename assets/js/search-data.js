@@ -9,26 +9,12 @@ ninja.data = [{
     handler: () => {
       window.location.href = "/";
     },
-  },{id: "nav-blog",
-          title: "blog",
-          description: "",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/blog/";
-          },
-        },{id: "nav-publications",
+  },{id: "nav-publications",
           title: "publications",
           description: "publications in reversed chronological order.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/publications/";
-          },
-        },{id: "nav-projects",
-          title: "projects",
-          description: "Research directions and the code behind them.",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/projects/";
           },
         },{id: "nav-cv",
           title: "cv",
@@ -44,18 +30,7 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/teaching-service/";
           },
-        },{id: "post-handling-bias-and-rope-in-qk-attention-with-a-unified-geometric-view",
-        
-          title: "Handling Bias and RoPE in QK Attention with a Unified Geometric View",
-        
-        description: "A practical geometric view for analyzing QK circuits with bias and RoPE using a single bilinear form",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2026/bias-and-rope-in-attention/";
-          
-        },
-      },{id: "news-i-just-started-my-phd-in-computer-science-at-boston-university-advised-by-professor-mark-crovella",
+        },{id: "news-i-just-started-my-phd-in-computer-science-at-boston-university-advised-by-professor-mark-crovella",
           title: 'I just started my PhD in Computer Science at Boston University, advised by...',
           description: "",
           section: "News",},{id: "news-quot-dependence-and-model-selection-in-llp-the-problem-of-variants-quot-was-accepted-at-kdd-2023",
@@ -113,21 +88,6 @@ ninja.data = [{
           description: "",
           section: "News",handler: () => {
               window.location.href = "/news/icml26_singular_vectors/";
-            },},{id: "projects-why-attention-heads-attend-where-they-do",
-          title: 'Why attention heads attend where they do',
-          description: "Isolating the low-dimensional signals that cause attention, and using them to trace interpretable circuits from a single forward pass.",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/1_attention_causal_communication/";
-            },},{id: "projects-feature-geometry-in-attention-heads",
-          title: 'Feature Geometry in Attention Heads',
-          description: "When and why the singular vectors of attention matrices align with the features a model uses.",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/2_feature_geometry/";
-            },},{id: "projects-learning-from-label-proportions",
-          title: 'Learning from Label Proportions',
-          description: "Model selection and benchmarking for a weakly supervised setting where only bag-level label proportions are known.",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/3_learning_from_label_proportions/";
             },},{
         id: 'social-dblp',
         title: 'DBLP',
@@ -162,13 +122,6 @@ ninja.data = [{
         section: 'Socials',
         handler: () => {
           window.open("https://orcid.org/0000-0003-0702-0146", "_blank");
-        },
-      },{
-        id: 'social-rss',
-        title: 'RSS Feed',
-        section: 'Socials',
-        handler: () => {
-          window.open("/feed.xml", "_blank");
         },
       },{
         id: 'social-scholar',
